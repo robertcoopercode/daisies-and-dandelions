@@ -1,0 +1,21 @@
+html {
+  background-color: $color-body;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 0;
+}

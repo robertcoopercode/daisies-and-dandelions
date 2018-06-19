@@ -1,0 +1,133 @@
+$header-height: 70px;
+
+.header {
+  display: flex;
+  align-items: stretch;
+  padding: 0 40px;
+  background-color: $color-header-background;
+  height: $header-height;
+}
+
+.header__logo {
+  position: relative;
+  margin: 0;
+  margin-left: -20px;
+  padding: 0 20px;
+  font-size: 32px;
+  font-family: $font-heading;
+}
+
+.header__logo-link {
+  height: 100%;
+  display: inline-block;
+  text-decoration: none;
+  color: $color-header-logo-text;
+  font-weight: 400;
+  line-height: $header-height;
+  
+  &:focus {
+    color: $color-header-logo-text;
+  }
+
+  &::after {
+    transition: all 0.125s ease-in-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid $color-header-menu-highlight;
+    transform: scaleX(0);
+  }
+
+  &:hover,
+  &:focus,
+  &--active {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.header__menu {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.header__menu-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.header__menu-list-item {
+  position: relative;
+}
+
+.header__menu-list-item-link {
+  text-decoration: none;
+  color: $color-header-menu-text;
+  padding: 0 20px;
+  height: 100%;
+  display: inline-block;
+  line-height: $header-height;
+  letter-spacing: 1px;
+  
+  &:focus {
+    color: $color-header-menu-text;
+  }
+  
+  &::after {
+    transition: all 0.125s ease-in-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid $color-header-menu-highlight;
+    transform: scaleX(0);
+  }
+  
+  &:hover,
+  &:focus,
+  &--active {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.header__cart {
+  line-height: $header-height + 5px;
+  margin-right: 8px;
+}
+
+.header__cart-link {
+  position: relative;
+  text-decoration: none;
+  
+  .icon-cart {
+    width: 20px;
+    height: auto;
+  }
+}
+
+.header__cart-count {
+  position: absolute;
+  top: -9px;
+  right: -8px;
+  display: inline-block;
+  background-color: $color-header-cart-highlight;
+  border-radius: 40px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  color: $color-header-cart-text;
+  font-weight: 600;
+  text-align: center;
+  font-size: 12px;
+}

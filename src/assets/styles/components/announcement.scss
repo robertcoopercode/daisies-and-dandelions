@@ -1,0 +1,28 @@
+.announcement {
+  position: relative;
+  background-color: #F3C969;
+  height: 35px;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.announcement__text {
+  margin: 0;
+  line-height: 35px;
+  text-align: center;
+}
+
+.announcement__close {
+  position: absolute;
+  line-height: 34px;
+  top: 0;
+  right: 15px;
+  
+  &:hover {
+    cursor: pointer;
+    
+    path {
+      fill: #000;
+    }
+  }
+}

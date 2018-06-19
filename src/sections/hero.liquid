@@ -1,0 +1,35 @@
+<div class="hero" data-section-id="{{ section.id }}" data-section-type="hero" style="background-image: url('{{ section.settings.hero-image | img_url: "2500x" }}')">
+  <h2 class="hero__title">{{ section.settings.title }}</h2>
+  <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero-image",
+        "label": "Hero Image",
+        "info": "Use an image that is 2500px in width and make sure to keep the size below 600 KB"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      }
+  
+    ],
+    "presets": [
+      {
+        "name": "Hero",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
