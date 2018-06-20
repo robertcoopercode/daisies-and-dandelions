@@ -6,7 +6,11 @@
   {%- assign collection = collections[section.settings.collection] -%}
 
   {% for product in collection.products limit: 6 %}
-    <a href="{{ product.url | within: collection }}" class="featured-collection-item">
+    <a href="{{ product.url | within: collection }}" class="featured-collection__item">
+      <span class="featured-collection__item-inventory">
+        <span class="featured-collection__item-inventory-number">{{ product.selected_or_first_available_variant.inventory_quantity }}</span>
+        <span class="featured-collection__item-inventory-text">left</span>
+      </span>
       {% if product.featured_image != blank %}
         <div class="featured-collection__image">
           {% include 'responsive-image' with
@@ -17,8 +21,8 @@
         </div>
       {% endif %}
 
-      <p>{{ product.title | escape }}</p>
-      <span>
+      <p class="featured-collection__item-title">{{ product.title | escape }}</p>
+      <span class="featured-collection__item-price">
         {% if product.compare_at_price > product.price %}
           {% if product.price_varies %}
             {%- assign sale_price = product.price | money -%}
@@ -37,18 +41,15 @@
         {% endif %}
       </span>
     </a>
-  {% else %}
-    {% for i in (1..6) %}
-      <a href="#" class="featured-collection-item">
-        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
-        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
-
-        <p>{{ 'homepage.onboarding.product_title' | t }}</p>
-        <p>{{ 1999 | money }}</p>
-      </a>
-    {% endfor %}
   {% endfor %}
 </section>
+
+<style>
+  :root {
+    --color-inventory-one: {{ section.settings.inventory_color_1 }};
+    --color-inventory-two: {{ section.settings.inventory_color_2 }};
+  }
+</style>
 
 {% schema %}
   {
@@ -64,6 +65,16 @@
         "id": "collection",
         "type": "collection",
         "label": "Collection"
+      },
+      {
+        "type": "color",
+        "id": "inventory_color_1",
+        "label": "Inventory color 1"
+      },
+      {
+        "type": "color",
+        "id": "inventory_color_2",
+        "label": "Inventory color 2"
       }
     ],
     "presets": [
