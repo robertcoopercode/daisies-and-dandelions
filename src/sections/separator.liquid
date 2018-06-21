@@ -1,0 +1,28 @@
+<div class="container">
+  <hr class="separator" />
+</div>
+
+<style>
+  :root {
+    --color-separator: {{ section.settings.separator_color }};
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Separator",
+    "settings": [
+      {
+        "type": "color",
+        "id": "separator_color",
+        "label": "Color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Separator",
+        "category": "Utility"
+      }
+    ]
+  }
+{% endschema %}
