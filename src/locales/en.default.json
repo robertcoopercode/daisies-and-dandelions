@@ -266,8 +266,7 @@
     },
     "footer": {
       "social_platform": "{{ name }} on {{ platform }}",
-      "copyright": "Copyright",
-      "payment_methods": "Payment methods accepted"
+      "attribution": "Made with ❤️ by the coolest brother ever"
     }
   },
   "products": {
