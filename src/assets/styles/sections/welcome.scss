@@ -1,0 +1,19 @@
+.welcome {
+}
+
+.welcome__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.welcome__text {
+    font-size: $font-body-size;
+    letter-spacing: $font-body-letter-spacing;
+    font-weight: $font-body-weight;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 30px;
+    text-align: justify;
+}

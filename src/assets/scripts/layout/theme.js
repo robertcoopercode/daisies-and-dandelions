@@ -56,3 +56,8 @@ $(document).ready(() => {
 $('.announcement__close').click(() => {
   $('.announcement').css('height', 0);
 })
+
+$(window).scroll(function(){
+    $(".hero__chevron").css("opacity", 1 - $(window).scrollTop() / 350);
+    //250 is fade pixels
+});

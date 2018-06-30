@@ -1,0 +1,34 @@
+<section class="welcome container">
+  {%- if section.settings.title != blank -%}
+    <h2 class="welcome__title">{{ section.settings.title | escape }}</h2>
+  {%- endif -%}
+  {%- if section.settings.text != blank -%}
+    <div class="welcome__text">
+      {{ section.settings.text }}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+  {
+    "name": "Welcome message",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Welcome"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Use this text to greet new site visitors and introduce them to your business.</p>"
+      }
+    ],
+    "presets": [{
+        "name": "Welcome",
+        "category": "Text"
+    }]
+  }
+{% endschema %}

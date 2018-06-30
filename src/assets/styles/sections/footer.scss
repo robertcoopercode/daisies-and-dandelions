@@ -21,7 +21,7 @@
     color: $color-body-text;
 
     &:focus {
-        color: red;
+        color: $color-body-text;
     }
 
     &::after {
@@ -94,10 +94,14 @@
     }
 }
 
-.footer__logo {
-    display: flex;
+.footer__logo-container {
+    display: block;
     margin: auto;
     margin-top: 20px;
+    text-align: center;
+}
+
+.footer__logo {
     height: 200px;
 }
 

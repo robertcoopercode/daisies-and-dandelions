@@ -28,9 +28,11 @@
     {% endfor %}
   </ul>
     
-    <a href="/">
+  <div class="footer__logo-container">
+    <a class="footer__logo-link" href="/">
       <img class="footer__logo" src="{{ section.settings.logo | img_url: '300x'  }}" />
     </a>
+  </div>
     
     <p class="footer__attribution">{{ 'layout.footer.attribution' | t }}</p>
 </footer>

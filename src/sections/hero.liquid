@@ -1,6 +1,9 @@
 <div class="hero" data-section-id="{{ section.id }}" data-section-type="hero" style="background-image: url('{{ section.settings.hero-image | img_url: "2500x" }}')">
   <h2 class="hero__title">{{ section.settings.title }}</h2>
   <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
+  <span class="hero__chevron">
+    {% include 'icon-chevron' %}
+  </span>
 </div>
 
 {% schema %}
