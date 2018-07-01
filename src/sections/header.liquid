@@ -20,7 +20,7 @@
       {%- else -%}
         <p class="announcement__text">{{ section.settings.announcement_bar_text | escape }}</p>
       {%- endif -%}
-      <span class="announcement__close" onClick="closeAnnouncement">
+      <span class="announcement__close">
           {% include 'icon-close' %}
       </span>
     </div>

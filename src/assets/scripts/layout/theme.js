@@ -51,13 +51,19 @@ $(document).ready(() => {
       'supports-cookies',
     );
   }
+  
+  // Hide the announcement bar if the user has previously closed it
+  //  TODO: Uncomment this when moving the website live
+  // if (localStorage.getItem('hideAnnouncement')) {
+  //     $('.announcement').css('display', 'none');
+  // }
 });
 
 $('.announcement__close').click(() => {
-  $('.announcement').css('height', 0);
+    $('.announcement').css('height', 0);
+    localStorage.setItem('hideAnnouncement', true);
 })
 
 $(window).scroll(function(){
     $(".hero__chevron").css("opacity", 1 - $(window).scrollTop() / 350);
-    //250 is fade pixels
 });
