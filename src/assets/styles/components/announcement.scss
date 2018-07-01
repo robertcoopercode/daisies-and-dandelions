@@ -18,11 +18,17 @@
   line-height: 34px;
   top: 0;
   right: 15px;
+  width: 20px;
+  height: auto;
+
+  svg {
+    fill: #444;
+  }
   
   &:hover {
     cursor: pointer;
     
-    path {
+    svg {
       fill: #000;
     }
   }

@@ -49,34 +49,71 @@
     {% endif %}
     
     <nav class="header__menu" role="navigation">
-        <ul class="header__menu-list">
+      <ul class="header__menu-list">
+        {% for link in linklists[section.settings.menu].links %}
+          {% if link.links != blank %}
+            <li class="header__menu-list-item">
+              <a class="header__menu-list-item-link{% if link.active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
+                {{ link.title }}
+                {% include 'icon-arrow-down' %}
+              </a>
+              <ul class="header__sub-menu-list">
+                {% for childlink in link.links %}
+                  <li class="header__sub-menu-list-item">
+                    <a class="header__sub-menu-list-item-link{% if link.active %}  header__sub-menu-list-item-link--active{% endif %}" href="{{ childlink.url }}">
+                      {{ childlink.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="header__menu-list-item">
+              <a class="header__menu-list-item-link{% if link.active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    
+    <div class="header__menu-mobile">
+      <span class="header__menu-mobile-hamburger">
+        {% include 'icon-hamburger' %}
+      </span>
+      <span class="header__menu-mobile-close">
+        {% include 'icon-close' %}
+      </span>
+      <ul class="header__menu-mobile-list">
           {% for link in linklists[section.settings.menu].links %}
-            {% if link.links != blank %}
-              <li class="header__menu-list-item">
-                <a class="header__menu-list-item-link{% if link.active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
-                  {{ link.title }}
-                  {% include 'icon-arrow-down' %}
-                </a>
-                <ul class="header__sub-menu-list">
-                  {% for childlink in link.links %}
-                    <li class="header__sub-menu-list-item">
-                      <a class="header__sub-menu-list-item-link{% if link.active %}  header__sub-menu-list-item-link--active{% endif %}" href="{{ childlink.url }}">
-                        {{ childlink.title }}
-                      </a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </li>
-            {% else %}
-              <li class="header__menu-list-item">
-                <a class="header__menu-list-item-link{% if link.active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
-                  {{ link.title }}
-                </a>
-              </li>
-            {% endif %}
+              {% if link.links != blank %}
+                <li class="header__menu-mobile-list-item">
+                  <a class="header__menu-mobile-list-item-link{% if link.active %}  header__menu-mobile-list-item-link--active{% endif %}" href="{{ link.url }}">
+                      {{ link.title }}
+                      {% include 'icon-arrow-down' %}
+                  </a>
+                  <ul class="header__sub-menu-list">
+                      {% for childlink in link.links %}
+                        <li class="header__sub-menu-list-item">
+                          <a class="header__sub-menu-list-item-link{% if link.active %}  header__sub-menu-list-item-link--active{% endif %}" href="{{ childlink.url }}">
+                              {{ childlink.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                <li class="header__menu-mobile-list-item">
+                  <a class="header__menu-mobile-list-item-link{% if link.active %}  header__menu-mobile-list-item-link--active{% endif %}" href="{{ link.url }}">
+                      {{ link.title }}
+                  </a>
+                </li>
+              {% endif %}
           {% endfor %}
-        </ul>
-      </nav>
+      </ul>
+    </div>
+    
     <span class="header__cart">
       <a class="header__cart-link" href="/cart">
         {% include 'icon-cart' %}

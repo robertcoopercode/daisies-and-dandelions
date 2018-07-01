@@ -64,6 +64,20 @@ $('.announcement__close').click(() => {
     localStorage.setItem('hideAnnouncement', true);
 })
 
+$('.header__menu-mobile-hamburger').click(() => {
+  $('.header__menu-mobile-hamburger').toggle();
+  $('.header__menu-mobile-close').toggle();
+  $('.header__menu-mobile-list').toggleClass('header__menu-mobile-list--active');
+  $('.header__menu-mobile').toggleClass('header__menu-mobile--active');
+})
+
+$('.header__menu-mobile-close').click(() => {
+  $('.header__menu-mobile-hamburger').toggle();
+  $('.header__menu-mobile-close').toggle();
+  $('.header__menu-mobile-list').toggleClass('header__menu-mobile-list--active');
+  $('.header__menu-mobile').toggleClass('header__menu-mobile--active');
+})
+
 $(window).scroll(function(){
     $(".hero__chevron").css("opacity", 1 - $(window).scrollTop() / 350);
 });
