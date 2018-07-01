@@ -7,6 +7,15 @@ $inventory-diameter: 70px;
   max-width: $grid-max-width;
 }
 
+.featured-collection__image {
+  transition: transform 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 100px -35px #979494;
+  }
+}
+
 .featured-collection__title {
   flex-basis: 100%;
   text-align: center;

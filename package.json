@@ -1,8 +1,8 @@
 {
-  "name": "starter-theme",
+  "name": "pw-floral",
   "version": "1.0.0-alpha.1",
   "private": true,
-  "author": "Shopify Inc.",
+  "author": "Robert Cooper",
   "description":
     "An opinionated, Slate compatible, starting point for developing Shopify themes.",
   "keywords": ["shopify", "theme"],
