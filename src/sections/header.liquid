@@ -90,12 +90,11 @@
                 <li class="header__menu-mobile-list-item">
                   <a class="header__menu-mobile-list-item-link{% if link.active %}  header__menu-mobile-list-item-link--active{% endif %}" href="{{ link.url }}">
                       {{ link.title }}
-                      {% include 'icon-arrow-down' %}
                   </a>
-                  <ul class="header__sub-menu-list">
+                  <ul class="header__sub-menu-mobile-list">
                       {% for childlink in link.links %}
-                        <li class="header__sub-menu-list-item">
-                          <a class="header__sub-menu-list-item-link{% if link.active %}  header__sub-menu-list-item-link--active{% endif %}" href="{{ childlink.url }}">
+                        <li class="header__sub-menu-mobile-list-item">
+                          <a class="header__sub-menu-mobile-list-item-link{% if link.active %}  header__sub-menu-mobile-list-item-link--active{% endif %}" href="{{ childlink.url }}">
                               {{ childlink.title }}
                           </a>
                         </li>

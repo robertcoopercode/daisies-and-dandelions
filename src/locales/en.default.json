@@ -123,9 +123,13 @@
   "contact": {
     "form": {
       "name": "Name",
+      "namePlaceholder": "Jennifer Lawrence",
       "email": "Email",
-      "phone": "Phone Number",
+      "emailPlaceholder": "jennifer.lawrence@gmail.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Flowers required for upcoming event",
       "message": "Message",
+      "messagePlaceholder": "What are your requirements?",
       "send": "Send",
       "post_success":
         "Thanks for contacting us. We'll get back to you as soon as possible."

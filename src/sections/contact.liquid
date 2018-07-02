@@ -1,0 +1,79 @@
+<div class="contact  container">
+    <h1 class="contact__title">{{ section.settings.title }}</h1>
+    <p class="contact__description">{{ section.settings.description }}</p>
+
+    {% form 'contact', class: "contact__form" %}
+
+        {% if form.posted_successfully? %}
+            <p class="form-success">
+                {{ 'contact.form.post_success' | t }}
+            </p>
+        {% endif %}
+
+        {{ form.errors | default_errors }}
+        
+        <div class="contact__form-field">
+            <label class="contact__form-label" for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+            <input class="contact__form-input"
+                    type="text"
+                   name="contact[name]"
+                   id="ContactFormName"
+                   placeholder="{{ 'contact.form.namePlaceholder' | t }}"
+                   >
+            
+        </div>
+        <div class="contact__form-field">
+            <label class="contact__form-label" for="ContactFormEmail">{{ 'contact.form.email' | t }}</label>
+            <input class="contact__form-input"
+                    type="email"
+                   name="contact[email]"
+                   id="ContactFormEmail"
+                   placeholder="{{ 'contact.form.emailPlaceholder' | t }}"
+                   spellcheck="false"
+                   autocomplete="off"
+                   autocapitalize="off">
+            
+        </div>
+        
+        <div class="contact__form-field">
+            <label class="contact__form-label" for="ContactFormSubject">{{ 'contact.form.subject' | t }}</label>
+            <input class="contact__form-input"
+                   type="tel"
+                   name="contact[subject]"
+                   id="ContactFormSubject"
+                   placeholder="{{ 'contact.form.subjectPlaceholder' | t }}"
+                   pattern="[0-9\-]*">
+            
+        </div>
+
+        <div class="contact__form-field">
+            <label class="contact__form-label" for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+            <textarea class="contact__form-textarea" 
+                    rows="10"
+                      name="contact[body]"
+                      id="ContactFormMessage"
+                      placeholder="{{ 'contact.form.messagePlaceholder' | t }}"></textarea>
+        </div>
+
+        <input type="submit" class="contact__form-button" value="{{ 'contact.form.send' | t }}">
+
+    {% endform %}
+</div>
+
+{% schema %}
+  {
+    "name": "Contact page",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Main text"
+        }
+    ]
+  }
+{% endschema %}

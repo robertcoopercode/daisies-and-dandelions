@@ -15,18 +15,21 @@ import {wrapTable, wrapIframe} from '@shopify/theme-rte';
 
 import Glide from '@glidejs/glide'
 
-new Glide('.glide', {
-  type: 'carousel',
-  perView: 3,
-  breakpoints: {
-    800: {
-        perView: 2,
-    },
-    500: {
-      perView: 1,
-    }
-  }
-}).mount()
+// If there is a glide carousel, setup a new instance of the carousel
+if (!!document.querySelector('.glide')) {
+    new Glide('.glide', {
+        type: 'carousel',
+        perView: 3,
+        breakpoints: {
+            800: {
+                perView: 2,
+            },
+            500: {
+                perView: 1,
+            }
+        }
+    }).mount()
+}
 
 window.slate = window.slate || {};
 window.theme = window.theme || {};

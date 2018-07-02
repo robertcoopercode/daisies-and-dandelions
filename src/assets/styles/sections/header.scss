@@ -14,6 +14,142 @@ $header-height-small: 50px;
   }
 }
 
+.header__menu-mobile-hamburger {
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    fill: $color-text-two;
+    width: 25px;
+  }
+}
+
+.header__menu-mobile-close {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  line-height: 35px;
+  width: 35px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    fill: $color-highlight-one;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+}
+
+.header__menu-mobile {
+  order: 1;
+  flex: 1;
+  line-height: $header-height-small;
+
+  &--active {
+    background-color: $color-background-one;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  @include media-query('large-up') {
+    display: none;
+  }
+}
+
+.header__menu-mobile-list {
+  display: none;
+
+  &--active {
+    z-index: 1;
+    display: unset;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 60px 40px;
+  }
+}
+
+.header__menu-mobile-list-item {
+  margin-bottom: 15px;
+  line-height: 50px;
+}
+
+.header__menu-mobile-list-item-link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $color-text-two;
+  font-size: 20px;
+  padding: 0 20px 5px 5px;
+
+  &:focus {
+    color: $color-text-two;
+  }
+
+  &::after {
+    transition: all 0.125s ease-in-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    border-bottom: 3px solid $color-highlight-one;
+  }
+
+  &:hover,
+  &--active {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.header__sub-menu-mobile-list {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.header__sub-menu-mobile-list-item-link {
+  position: relative;
+  color: $color-text-two;
+  text-decoration: none;
+  display: flex;
+
+  &:focus {
+    color: $color-text-two;
+  }
+
+  &::after {
+    transition: all 0.125s ease-in-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    border-bottom: 3px solid $color-highlight-one;
+  }
+
+  &:hover,
+  &--active {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
 .header__logo {
   position: relative;
   margin: 0;
@@ -63,106 +199,6 @@ $header-height-small: 50px;
   &--active {
     &::after {
       transform: scaleX(1);
-    }
-  }
-}
-
-.header__menu-mobile-hamburger {
-  &:hover {
-    cursor: pointer;
-  }
-  
-  svg {
-    fill: $color-text-two;
-    width: 25px;
-  }
-}
-
-.header__menu-mobile-close {
-  display: none;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  line-height: 35px;
-  width: 35px;
-  
-  &:hover {
-    cursor: pointer;
-  }
-
-  svg {
-    fill: $color-highlight-one;
-    width: auto;
-    height: auto;
-    display: block;
-  }
-}
-
-.header__menu-mobile {
-  order: 1;
-  flex: 1;
-  line-height: $header-height-small;
-
-  &--active {
-    background-color: $color-background-one;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-  }
-
-  @include media-query('large-up') {
-    display: none;
-  }
-}
-
-.header__menu-mobile-list {
-  display: none;
-  
-  &--active {
-    z-index: 1;
-    display: unset;
-    position: absolute;
-    list-style: none;
-    padding: 0;
-    margin: 60px 40px;
-  }
-}
-
-.header__menu-mobile-list-item {
-  margin-bottom: 15px;
-  line-height: 50px;
-}
-
-.header__menu-mobile-list-item-link {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: $color-text-two;
-  font-size: 20px;
-  padding: 0 20px 5px 5px;
-  
-  &:focus {
-    color: $color-text-two;
-  }
-  
-  &::after {
-    transition: all 0.125s ease-in-out;
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    display: block;
-    border-bottom: 3px solid $color-highlight-one;
-  }
-
-  &:hover,
-  &--active {
-    &::after {
-      width: 100%;
     }
   }
 }
@@ -236,12 +272,13 @@ $header-height-small: 50px;
 }
 
 .header__sub-menu-list {
-  display: none;
+  z-index: 1;
   position: absolute;
+  right: 0;
+  display: none;
   padding: 0;
   list-style: none;
   margin: 0;
-  right: 0;
   min-width: 200px;
 }
 

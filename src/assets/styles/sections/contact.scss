@@ -1,0 +1,93 @@
+.contact__title {
+    text-align: center;
+    margin-top: 0;
+}
+
+.contact__description {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.contact__form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact__form-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    
+    &:nth-of-type(-n + 2) {
+        width: 50%;
+    }
+}
+
+.contact__form-label {
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact__form-input {
+    border: none;
+    border-bottom: 3px solid $color-background-two;
+    padding: 10px 0;
+    letter-spacing: 0.8px;
+    
+    &:focus {
+        outline: none;
+        border-bottom: 3px solid $color-background-one;
+    }
+    
+    &::placeholder {
+        letter-spacing: 0.8px;
+        font-weight: 300;
+    }
+}
+
+.contact__form-textarea {
+    position: relative;
+    display: block;
+    padding: 20px;
+    border: none;
+    background-color: $color-background-three;
+    border-radius: 5px;
+    letter-spacing: 0.8px;
+
+    &:focus {
+        outline: none;
+        border: 3px solid $color-background-one;
+        padding: 20px - 3px;
+    }
+
+    &::placeholder {
+        letter-spacing: 0.8px;
+        font-weight: 300;
+    }
+}
+
+.contact__form-button {
+    margin: auto;
+    padding: 8px 14px;
+    background-color: $color-background-two;
+    color: $color-text-two;
+    font-weight: 400;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+
+    &:focus {
+        color: $color-text-two;
+    }
+
+    &:hover {
+        background-color: $color-background-one;
+        color: $color-highlight-one;
+        box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
+        transform: translateY(-1px);
+    }
+}
