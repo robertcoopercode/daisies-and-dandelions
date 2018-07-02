@@ -53,13 +53,13 @@
         {% for link in linklists[section.settings.menu].links %}
           {% if link.links != blank %}
             <li class="header__menu-list-item">
-              <a class="header__menu-list-item-link{% if link.active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
+              <a class="header__menu-list-item-link{% if link.active or link.child_active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
                 {{ link.title }}
               </a>
               <ul class="header__sub-menu-list">
                 {% for childlink in link.links %}
                   <li class="header__sub-menu-list-item">
-                    <a class="header__sub-menu-list-item-link{% if link.active %}  header__sub-menu-list-item-link--active{% endif %}" href="{{ childlink.url }}">
+                    <a class="header__sub-menu-list-item-link{% if childlink.active %}  header__sub-menu-list-item-link--active{% endif %}" href="{{ childlink.url }}">
                       {{ childlink.title }}
                     </a>
                   </li>
@@ -94,7 +94,7 @@
                   <ul class="header__sub-menu-mobile-list">
                       {% for childlink in link.links %}
                         <li class="header__sub-menu-mobile-list-item">
-                          <a class="header__sub-menu-mobile-list-item-link{% if link.active %}  header__sub-menu-mobile-list-item-link--active{% endif %}" href="{{ childlink.url }}">
+                          <a class="header__sub-menu-mobile-list-item-link{% if childlink.active %}  header__sub-menu-mobile-list-item-link--active{% endif %}" href="{{ childlink.url }}">
                               {{ childlink.title }}
                           </a>
                         </li>
