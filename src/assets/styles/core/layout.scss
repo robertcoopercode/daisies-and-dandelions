@@ -1,5 +1,5 @@
 html {
-  background-color: $color-body;
+  background-color: $color-background-four;
   box-sizing: border-box;
 }
 
@@ -15,7 +15,11 @@ html {
 }
 
 .container {
-  max-width: 960px;
+  max-width: $grid-large;
   margin: auto;
-  padding: 40px 0;
+  padding: 60px $grid-gutter;
+  
+  @include media-query('medium-up') {
+    padding: 80px $grid-gutter;
+  }
 }

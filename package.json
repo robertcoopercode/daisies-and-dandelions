@@ -1,11 +1,13 @@
 {
-  "name": "pw-floral",
+  "name": "primrowse-and-willow",
   "version": "1.0.0-alpha.1",
   "private": true,
   "author": "Robert Cooper",
-  "description":
-    "An opinionated, Slate compatible, starting point for developing Shopify themes.",
-  "keywords": ["shopify", "theme"],
+  "description": "An opinionated, Slate compatible, starting point for developing Shopify themes.",
+  "keywords": [
+    "shopify",
+    "theme"
+  ],
   "bugs": "https://github.com/Shopify/starter-theme/issues",
   "license": "MIT",
   "repository": {
@@ -20,6 +22,7 @@
     "stylelint-config-shopify": "^5.0.0"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.1.0",
     "@shopify/theme-a11y": "^1.0.0-alpha.3",
     "@shopify/theme-cart": "^1.0.0-alpha.3",
     "@shopify/theme-currency": "^1.0.0-alpha.3",

@@ -1,0 +1,72 @@
+$card-bottom-margin: 40px;
+
+.cta-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: -$card-bottom-margin;
+
+    @include media-query('medium-up') {
+        justify-content: space-around;
+    }
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    
+    &:hover {
+        .card__button {
+            background-color: $color-background-one;
+        }
+    }
+
+    @include media-query('medium-up') {
+        width: 50%;
+        margin: 0 20px 40px;
+    }
+}
+
+.card__bottom {
+    padding: 0 30px 30px;
+    background-color: $color-background-three;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__title {
+    font-family: $font-body;
+    font-size: 24px;
+}
+
+.card__description {
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    margin-top: 0;
+}
+
+.card__button {
+    padding: 8px 14px;
+    background-color: $color-background-two;
+    color: $color-text-two;
+    font-weight: 400;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    
+    &:focus {
+        color: #ffffff;
+    }
+    
+    &:hover {
+        color: $color-highlight-one;
+        box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
+        transform: translateY(-1px);
+    }
+}

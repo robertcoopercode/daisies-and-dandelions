@@ -4,7 +4,7 @@ $header-height-small: 50px;
 .header {
   display: flex;
   align-items: stretch;
-  background-color: $color-header-background;
+  background-color: $color-background-one;
   padding: 0 20px;
   height: $header-height-small;
   
@@ -35,7 +35,7 @@ $header-height-small: 50px;
   height: 100%;
   display: inline-block;
   text-decoration: none;
-  color: $color-header-logo-text;
+  color: $color-text-two;
   font-weight: 400;
   line-height: $header-height-small;
   
@@ -44,7 +44,7 @@ $header-height-small: 50px;
   }
   
   &:focus {
-    color: $color-header-logo-text;
+    color: $color-text-two;
   }
 
   &::after {
@@ -55,12 +55,11 @@ $header-height-small: 50px;
     bottom: 0;
     width: 100%;
     display: block;
-    border-bottom: 3px solid $color-header-menu-highlight;
+    border-bottom: 3px solid $color-highlight-one;
     transform: scaleX(0);
   }
 
   &:hover,
-  &:focus,
   &--active {
     &::after {
       transform: scaleX(1);
@@ -74,7 +73,7 @@ $header-height-small: 50px;
   }
   
   svg {
-    fill: $color-header-menu-text;
+    fill: $color-text-two;
     width: 25px;
   }
 }
@@ -82,8 +81,8 @@ $header-height-small: 50px;
 .header__menu-mobile-close {
   display: none;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   line-height: 35px;
   width: 35px;
   
@@ -92,7 +91,7 @@ $header-height-small: 50px;
   }
 
   svg {
-    fill: $color-header-menu-text;
+    fill: $color-highlight-one;
     width: auto;
     height: auto;
     display: block;
@@ -105,7 +104,7 @@ $header-height-small: 50px;
   line-height: $header-height-small;
 
   &--active {
-    background-color: $color-header-background;
+    background-color: $color-background-one;
     position: absolute;
     left: 0;
     top: 0;
@@ -128,18 +127,44 @@ $header-height-small: 50px;
     position: absolute;
     list-style: none;
     padding: 0;
-    margin: 40px 30px;
+    margin: 60px 40px;
   }
 }
 
 .header__menu-mobile-list-item {
   margin-bottom: 15px;
+  line-height: 50px;
 }
 
 .header__menu-mobile-list-item-link {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
-  color: $color-header-menu-text;
+  color: $color-text-two;
   font-size: 20px;
+  padding: 0 20px 5px 5px;
+  
+  &:focus {
+    color: $color-text-two;
+  }
+  
+  &::after {
+    transition: all 0.125s ease-in-out;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    border-bottom: 3px solid $color-highlight-one;
+  }
+
+  &:hover,
+  &--active {
+    &::after {
+      width: 100%;
+    }
+  }
 }
 
 .header__menu {
@@ -170,7 +195,7 @@ $header-height-small: 50px;
 
 .header__menu-list-item-link {
   text-decoration: none;
-  color: $color-header-menu-text;
+  color: $color-text-two;
   padding: 0 20px;
   height: 100%;
   display: inline-block;
@@ -182,7 +207,7 @@ $header-height-small: 50px;
   }
   
   &:focus {
-    color: $color-header-menu-text;
+    color: $color-text-two;
   }
   
   &::after {
@@ -193,7 +218,7 @@ $header-height-small: 50px;
     bottom: 0;
     width: 100%;
     display: block;
-    border-bottom: 3px solid $color-header-menu-highlight;
+    border-bottom: 3px solid $color-highlight-one;
     transform: scaleX(0);
   }
   
@@ -236,12 +261,12 @@ $header-height-small: 50px;
   top: -9px;
   right: -8px;
   display: inline-block;
-  background-color: $color-header-cart-highlight;
+  background-color: $color-highlight-one;
   border-radius: 40px;
   width: 15px;
   height: 15px;
   line-height: 15px;
-  color: $color-header-cart-text;
+  color: $color-text-three;
   font-weight: 600;
   text-align: center;
   font-size: 12px;

@@ -1,0 +1,65 @@
+<div class="cta-cards  container" data-section-id="{{ section.id }}">
+    {% for block in section.blocks %}
+      <div class="card">
+        <img class="card__image" src="{{ block.settings.image | img_url: "400x", scale: 2 }}" />
+        <div class="card__bottom">
+          <h2 class="card__title">{{ block.settings.title }}</h2>
+          <p class="card__description">{{ block.settings.description }}</p>
+          <a class="card__button" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Call to Action Cards",
+    "settings": [
+      
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Card image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Card title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Card description"
+          },
+          {
+            "type": "text",
+            "id": "button_link",
+            "label": "Button link"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button color"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Call to Action Cards",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

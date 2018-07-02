@@ -1,0 +1,31 @@
+.glide__slides {
+    margin: 0;
+}
+
+.glide__arrow {
+    background-color: $color-background-one;
+    padding: 8px 3px;
+    border: none;
+    
+    &:hover {
+        background-color: $color-background-two;
+    }
+    
+    svg {
+        fill: $color-highlight-one;
+        width: 20px;
+        height: auto;
+    }
+    
+    &--left {
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+    
+    &--right {
+        svg {
+            transform: rotate(-90deg);
+        }
+    }
+}

@@ -1,9 +1,14 @@
 .announcement {
+  display: none;
   position: relative;
   background-color: #F3C969;
   height: 35px;
   transition: height 0.5s ease-in-out;
   overflow: hidden;
+  
+  @include media-query('medium-up') {
+    display: block;
+  }
 }
 
 .announcement__text {

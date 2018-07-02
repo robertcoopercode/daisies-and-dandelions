@@ -10,7 +10,6 @@
 
   :root {
     --color-accent: {{ settings.color_accent }};
-    --color-body-text: {{ settings.color_body_text }};
     --color-main-background: {{ settings.color_main_bg }};
     --color-border: {{ settings.color_body_text | color_lighten: 50 }};
 
@@ -19,5 +18,15 @@
     --font-body-weight: {{ settings.font_body.weight }};
     --font-body-style: {{ settings.font_body.style }};
     --font-body-bold-weight: {{ font_body_bold.weight | default: 'bold' }};
+      
+      
+      --color-background-one: {{ settings.color_background_one }};
+      --color-background-two: {{ settings.color_background_two }};
+      --color-background-three: {{ settings.color_background_three }};
+      --color-background-four: {{ settings.color_background_four }};
+      --color-text-one: {{ settings.color_text_one }};
+      --color-text-two: {{ settings.color_text_two }};
+      --color-text-three: {{ settings.color_text_three }};
+      --color-highlight-one: {{ settings.color_highlight_one }};
   }
 </style>

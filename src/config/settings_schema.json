@@ -12,21 +12,50 @@
     "settings": [
       {
         "type": "color",
-        "id": "color_accent",
-        "label": "Accent",
-        "default": "#c4cdd5",
-        "info": "Buttons and special ornaments"
+        "id": "color_background_one",
+        "label": "Background 1",
+        "default": "#fff"
       },
       {
         "type": "color",
-        "id": "color_body_text",
-        "label": "Text",
-        "default": "#161d25"
+        "id": "color_background_two",
+        "label": "Background 2",
+        "default": "#708D81"
       },
       {
         "type": "color",
-        "id": "color_main_bg",
-        "label": "Background",
+        "id": "color_background_three",
+        "label": "Background 3",
+        "default": "#e1e8e5"
+      },
+      {
+        "type": "color",
+        "id": "color_background_four",
+        "label": "Background 4",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_text_one",
+        "label": "Text 1",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_text_two",
+        "label": "Text 2",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_text_three",
+        "label": "Text 3",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_highlight_one",
+        "label": "Highlight 1",
         "default": "#fff"
       }
     ]
@@ -101,6 +130,17 @@
         "id": "favicon",
         "label": "Favicon image",
         "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  },
+  {
+    "name": "Instagram API",
+    "settings": [
+      {
+        "type": "text",
+        "id": "instagram_access_token",
+        "label": "API Access Token",
+        "info": "Required to display images from your Instagram account"
       }
     ]
   }

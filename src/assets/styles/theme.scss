@@ -1,9 +1,11 @@
 @charset 'UTF-8';
 
 /**
- * [replace with theme name] | Built with Slate
+ * Primrose & Willow | Built with Slate
  */
 @import '~normalize.css/normalize';
+@import '~@glidejs/glide/src/assets/sass/glide.core';
+@import '~@glidejs/glide/src/assets/sass/glide.theme';
 
 // Settings
 @import './variables';
@@ -19,6 +21,7 @@
 @import './core/media';
 @import './core/responsive-tables';
 @import './core/rte';
+@import './core/sections';
 @import './core/typography';
 
 // Components
@@ -31,11 +34,13 @@
 
 // Sections
 @import './sections/blog-posts';
+@import './sections/carousel';
 @import './sections/collection-list';
+@import './sections/cta-cards';
 @import './sections/featured-collection';
 @import './sections/footer';
 @import './sections/header';
-@import 'sections/hero.scss.liquid';
+@import './sections/hero';
 @import './sections/images-with-tags';
 @import './sections/image-with-text';
 @import './sections/separator';

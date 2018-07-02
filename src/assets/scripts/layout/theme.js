@@ -13,6 +13,21 @@ import {pageLinkFocus} from '@shopify/theme-a11y';
 import {cookiesEnabled} from '@shopify/theme-cart';
 import {wrapTable, wrapIframe} from '@shopify/theme-rte';
 
+import Glide from '@glidejs/glide'
+
+new Glide('.glide', {
+  type: 'carousel',
+  perView: 3,
+  breakpoints: {
+    800: {
+        perView: 2,
+    },
+    500: {
+      perView: 1,
+    }
+  }
+}).mount()
+
 window.slate = window.slate || {};
 window.theme = window.theme || {};
 
@@ -51,7 +66,7 @@ $(document).ready(() => {
       'supports-cookies',
     );
   }
-  
+
   // Hide the announcement bar if the user has previously closed it
   //  TODO: Uncomment this when moving the website live
   // if (localStorage.getItem('hideAnnouncement')) {

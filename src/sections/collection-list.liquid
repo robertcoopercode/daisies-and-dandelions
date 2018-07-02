@@ -8,7 +8,7 @@
 {%- endcomment -%}
 <section class="collection-list">
   {% if section.settings.title != blank %}
-    <h2 class="collection-list__title">{{ section.settings.title | escape }}</h2>
+    <h2 class="collection-list__title  section-title">{{ section.settings.title | escape }}</h2>
   {% endif %}
 
   {% for block in section.blocks %}

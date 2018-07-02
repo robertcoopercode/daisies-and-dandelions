@@ -32,7 +32,7 @@
   {%- endif -%}
 
   {% include 'social-meta-tags' %}
-  {% include 'style-tags' %}
+  {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
 
   <script>
@@ -47,7 +47,7 @@
       moneyFormat: {{ shop.money_format | json }}
     };
   </script>
-
+  
   {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}

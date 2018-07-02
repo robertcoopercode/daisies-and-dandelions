@@ -1,51 +1,16 @@
 <div class="image-and-tags  container" data-section-id="{{ section.id }}">
+  
+  <h2 class="image-and-tags__title  section-title">{{ section.settings.title }}</h2>
+
     {% assign count = 0 %}
   
-  <h2 class="image-and-tags__title">{{ section.settings.title }}</h2>
-  
-  <div class="image-and-tags__top-section">
-    <div class="image-and-tags__top-section-images">
-      <img class="image-and-tags__top-section-image  image-and-tags__top-section-image--one" src="{{ section.settings.image_1 | img_url: "400x", scale: 2 }}" />
-      <img class="image-and-tags__top-section-image  image-and-tags__top-section-image--two" src="{{ section.settings.image_2 | img_url: "400x", scale: 2 }}" />
-    </div>
-    <div class="image-and-tags__top-section-tags">
-      {% for block in section.blocks limit:4 %}
-          {% assign count = count | plus: 1 %}
-          {% assign countModulo = count | modulo:2 %}
-          {% if countModulo == 0 %}
-            <span class="tag" style="background-color: {{ section.settings.tag_color_1 }}" {{ block.shopify_attributes }}>
+    <div class="image-and-tags__tags">
+      {% for block in section.blocks %}
+          <span class="tag" style="background-color: {{ section.settings.tag_color_1 }}" {{ block.shopify_attributes }}>
               {{ block.settings.text }}
             </span>
-          {% else %}
-            <span class="tag" style="background-color: {{ section.settings.tag_color_2 }}" {{ block.shopify_attributes }}>
-              {{ block.settings.text }}
-            </span>
-          {% endif %}
       {% endfor %}
     </div>
-  </div>
-  
-  <div class="image-and-tags__bottom-section">
-    <div class="image-and-tags__bottom-section-images">
-      <img class="image-and-tags__bottom-section-image  image-and-tags__bottom-section-image--one" src="{{ section.settings.image_3 | img_url: "400x", scale: 2 }}" />
-      <img class="image-and-tags__bottom-section-image  image-and-tags__bottom-section-image--two" src="{{ section.settings.image_4 | img_url: "400x", scale: 2 }}" />
-    </div>
-    <div class="image-and-tags__bottom-section-tags">
-      {% for block in section.blocks offset:4 %}
-          {% assign count = count | plus: 1 %}
-          {% assign countModulo = count | modulo:2 %}
-          {% if countModulo == 0 %}
-            <span class="tag" style="background-color: {{ section.settings.tag_color_1 }}" {{ block.shopify_attributes }}>
-              {{ block.settings.text }}
-            </span>
-          {% else %}
-            <span class="tag" style="background-color: {{ section.settings.tag_color_2 }}" {{ block.shopify_attributes }}>
-              {{ block.settings.text }}
-            </span>
-          {% endif %}
-      {% endfor %}
-    </div>
-  </div>
   
 </div>
 
@@ -62,35 +27,6 @@
         "type": "color",
         "id": "tag_color_1",
         "label": "Tag color 1"
-      },
-      {
-        "type": "color",
-        "id": "tag_color_2",
-        "label": "Tag color 2"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_1",
-        "label": "Image 1",
-        "info": "Select an image with a dimension of 450x300 px"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_2",
-        "label": "Image 2",
-        "info": "Select an image with a dimension of 450x300 px"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_3",
-        "label": "Image 3",
-        "info": "Select an image with a dimension of 450x300 px"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_4",
-        "label": "Image 4",
-        "info": "Select an image with a dimension of 450x300 px"
       }
     ],
     "blocks": [

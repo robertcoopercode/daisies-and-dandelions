@@ -1,5 +1,5 @@
 <div class="separator container">
-  <hr class="separator__line" />
+  <hr class="separator__line{% if section.settings.size == 'small' %}  separator__line--small{% endif %}" />
 </div>
 
 <style>
@@ -16,6 +16,22 @@
         "type": "color",
         "id": "separator_color",
         "label": "Color"
+      },
+      {
+        "type": "select",
+        "id": "size",
+        "label": "Size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
       }
     ],
     "presets": [
