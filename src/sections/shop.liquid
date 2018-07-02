@@ -1,0 +1,49 @@
+<div class="shop">
+    <div class="shop__header  container">
+        <div class="shop__header-information">
+            <h1 class="shop__title">{{ section.settings.title }}</h1>
+            <p class="shop__description">{{ section.settings.description }}</p>
+            <p class="shop__note">{{ section.settings.note }}</p>
+        </div>
+        <div class="shop__header-image">
+            {% include 'responsive-image' with
+                image: section.settings.image,
+                max_width: 480,
+                max_height: 480 %}
+        </div>
+    </div>
+    
+    <div class="shop__products  container">
+      {% for product in collection.products %}
+          {% include 'product' %}
+      {% endfor %}
+    </div>  
+</div>
+
+{% schema %}
+  {
+    "name": "Shop page",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "note",
+            "label": "Note"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Header image"
+        }
+    ]
+  }
+{% endschema %}

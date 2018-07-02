@@ -22,7 +22,7 @@ $card-bottom-margin: 40px;
     
     &:hover {
         .card__button {
-            background-color: $color-background-one;
+            background-color: var(--color-cta-button-background-hover); // background 1
         }
     }
 
@@ -34,7 +34,7 @@ $card-bottom-margin: 40px;
 
 .card__bottom {
     padding: 0 30px 30px;
-    background-color: $color-background-three;
+    background-color: var(--color-cta-background); // background 3
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,8 +53,8 @@ $card-bottom-margin: 40px;
 
 .card__button {
     padding: 8px 14px;
-    background-color: $color-background-two;
-    color: $color-text-two;
+    background-color: var(--color-cta-button-background); // background 2
+    color: var(--color-cta-button-text); // white
     font-weight: 400;
     border-radius: 5px;
     text-decoration: none;
@@ -65,7 +65,7 @@ $card-bottom-margin: 40px;
     }
     
     &:hover {
-        color: $color-highlight-one;
+        color: var(--color-cta-button-text-hover); // highlight
         box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
         transform: translateY(-1px);
     }

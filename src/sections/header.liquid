@@ -55,7 +55,6 @@
             <li class="header__menu-list-item">
               <a class="header__menu-list-item-link{% if link.active %}  header__menu-list-item-link--active{% endif %}" href="{{ link.url }}">
                 {{ link.title }}
-                {% include 'icon-arrow-down' %}
               </a>
               <ul class="header__sub-menu-list">
                 {% for childlink in link.links %}

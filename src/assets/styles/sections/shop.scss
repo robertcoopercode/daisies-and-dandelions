@@ -1,0 +1,105 @@
+.shop__header {
+    position: relative;
+}
+
+.shop__header-information {
+    background-color: $color-background-three;
+    width: 80%;
+    margin: auto;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:  40px 30px 130px;
+    
+    @include media-query('medium-up') {
+        padding:  40px 30px;
+        margin: 0;
+    }
+    
+    @include media-query('large-up') {
+        min-height: 360px;
+        padding:  60px 30px;
+    }
+}
+
+.shop__title {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+
+    @include media-query('medium-up') {
+        text-align: left;
+    }
+    
+    @include media-query('large-up') {
+        font-size: 40px;
+        letter-spacing: 3px;
+    }
+}
+
+.shop__description {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    line-height: 26px;
+    margin: 20px 0 25px;
+    
+    @include media-query('medium-up') {
+        width: 70%;
+        text-align: left;
+    }
+
+    @include media-query('large-up') {
+        font-size: 20px;
+        letter-spacing: 0.8px;
+        line-height: 30px;
+    }
+}
+
+.shop__note {
+    background-color: $color-highlight-one;
+    padding: 8px 10px;
+    align-self: center;
+    margin: 0;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    text-align: center;
+    
+    @include media-query('medium-up') {
+        align-self: flex-start;
+        text-align: left;
+        width: 70%;
+    }
+}
+
+.shop__header-image {
+    width: 50%;
+    margin: auto;
+    margin-top: -100px;
+    
+    @include media-query('medium-up') {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        margin: 0;
+    }
+}
+
+.shop__products {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $grid-max-width;
+    padding: 0 30px;
+    justify-content: center;
+    margin-bottom: -30px;
+
+    @include media-query('large-up') {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

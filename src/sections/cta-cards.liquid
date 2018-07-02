@@ -11,11 +11,45 @@
     {% endfor %}
 </div>
 
+<style>
+  :root {
+    --color-cta-background: {{ section.settings.background_color }};
+    --color-cta-button-background: {{ section.settings.button_background_color }};
+    --color-cta-button-background-hover: {{ section.settings.button_background_color_hover }};
+    --color-cta-button-text: {{ section.settings.button_text_color }};
+    --color-cta-button-text-hover: {{ section.settings.button_text_color_hover }};
+  }
+</style>
+
 {% schema %}
   {
     "name": "Call to Action Cards",
     "settings": [
-      
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "button_background_color_hover",
+        "label": "Button background color (hover)"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button text color"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color_hover",
+        "label": "Button text color (hover)"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+      }
     ],
     "blocks": [
       {
@@ -46,11 +80,6 @@
             "type": "text",
             "id": "button_text",
             "label": "Button text"
-          },
-          {
-            "type": "color",
-            "id": "button_color",
-            "label": "Button color"
           }
         ]
       }

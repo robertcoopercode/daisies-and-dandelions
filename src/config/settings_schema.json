@@ -57,6 +57,18 @@
         "id": "color_highlight_one",
         "label": "Highlight 1",
         "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_inventory_one",
+        "label": "Product inventory bubble 1",
+        "default": "#D1CFE2"
+      },
+      {
+        "type": "color",
+        "id": "color_inventory_two",
+        "label": "Product inventory bubble 2",
+        "default": "#D4AFB9"
       }
     ]
   },

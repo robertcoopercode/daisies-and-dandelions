@@ -30,6 +30,7 @@
 @import './components/hero-banner';
 @import './components/icons';
 @import './components/placeholders';
+@import './components/product';
 @import './components/responsive-images';
 
 // Sections
@@ -43,9 +44,11 @@
 @import './sections/hero';
 @import './sections/images-with-tags';
 @import './sections/image-with-text';
+@import './sections/shop';
 @import './sections/separator';
 @import './sections/welcome';
 
 // Templates
+@import './templates/collection';
 @import './templates/gift_card';
 @import './templates/product';

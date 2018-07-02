@@ -6,7 +6,7 @@
   
     <div class="image-and-tags__tags">
       {% for block in section.blocks %}
-          <span class="tag" style="background-color: {{ section.settings.tag_color_1 }}" {{ block.shopify_attributes }}>
+          <span class="tag" style="background-color: {{ section.settings.tag_color }}" {{ block.shopify_attributes }}>
               {{ block.settings.text }}
             </span>
       {% endfor %}
@@ -16,7 +16,7 @@
 
 {% schema %}
   {
-    "name": "Images with tags",
+    "name": "Tag list",
     "settings": [
       {
         "type": "text",
@@ -25,8 +25,8 @@
       },
       {
         "type": "color",
-        "id": "tag_color_1",
-        "label": "Tag color 1"
+        "id": "tag_color",
+        "label": "Tag color"
       }
     ],
     "blocks": [
@@ -44,8 +44,8 @@
     ],
     "presets": [
       {
-        "name": "Images with tags",
-        "category": "Image"
+        "name": "Tag list",
+        "category": "Text"
       }
     ]
   }
