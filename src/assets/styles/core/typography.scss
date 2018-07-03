@@ -20,13 +20,21 @@ h4,
 h5,
 h6 {
   font-family: $font-heading;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 h2 {
   text-transform: uppercase;
   font-size: 32px;
   font-weight: 400;
-  letter-spacing: $font-heading-letter-spacing;
+  letter-spacing: 2px;
 }
 
 body,

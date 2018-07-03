@@ -158,6 +158,8 @@ $header-height-small: 50px;
   font-family: $font-heading;
   order: 2;
   text-align: center;
+  text-transform: none;
+  letter-spacing: initial;
 
   @include media-query('large-up') {
     margin-left: -20px;

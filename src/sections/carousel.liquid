@@ -14,11 +14,6 @@
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">{% include 'icon-chevron' %}</button>
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">">{% include 'icon-chevron' %}</button>
       </div>
-      <div class="glide__bullets" data-glide-el="controls[nav]">
-          {% for block in section.blocks %}
-            <button class="glide__bullet" data-glide-dir="={% increment count %}"></button>
-          {% endfor %}
-      </div>
     </div>
   </div>
 </section>
