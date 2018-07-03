@@ -4,22 +4,21 @@
 
 .shop__header-information {
     background-color: $color-background-three;
-    width: 80%;
     margin: auto;
-    min-height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding:  40px 30px 130px;
+    padding:  40px 30px;
     
     @include media-query('medium-up') {
+        width: 80%;
         padding:  40px 30px;
         margin: 0;
     }
     
     @include media-query('large-up') {
-        min-height: 360px;
-        padding:  60px 30px;
+        min-height: 340px;
+        padding:  50px 50px;
     }
 }
 
@@ -67,6 +66,7 @@
     line-height: 22px;
     letter-spacing: 0.6px;
     text-align: center;
+    font-weight: 400;
     
     @include media-query('medium-up') {
         align-self: flex-start;
@@ -76,15 +76,14 @@
 }
 
 .shop__header-image {
-    width: 50%;
-    margin: auto;
-    margin-top: -100px;
+    display: none;
     
     @include media-query('medium-up') {
         position: absolute;
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+        display: block;
         width: 40%;
         margin: 0;
     }

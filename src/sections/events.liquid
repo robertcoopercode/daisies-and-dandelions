@@ -1,0 +1,73 @@
+<div class="events  container">
+    <h1 class="events__title">{{ section.settings.title }}</h1>
+
+    {% for block in section.blocks %}
+      <div class="event">
+          <h3 class="event__title">{{ block.settings.title }}</h3>
+          <div class="event__top-container">
+              {% include 'responsive-image' with
+                  image: block.settings.image,
+                  max_width: 400,
+                  max_height: 400
+              %}
+            <div class="event_content  rte">
+              {{ block.settings.content }}
+            </div>
+          </div>
+          <div class="event__bottom-container">
+            <div class="event__date  rte">
+              {{ block.settings.date }}
+            </div>
+            <div class="event__location  rte">
+              {{ block.settings.location }}
+            </div>
+          </div>
+      </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Events Page",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "event",
+        "name": "Event",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Event image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Event title"
+          },
+            {
+            "type": "textarea",
+            "id": "date",
+            "label": "Date and time"
+          },
+          {
+            "type": "textarea",
+            "id": "location",
+            "label": "Event location"
+          },
+            {
+            "type": "textarea",
+            "id": "content",
+            "label": "Event description"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
