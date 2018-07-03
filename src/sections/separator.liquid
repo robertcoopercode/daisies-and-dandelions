@@ -1,22 +1,11 @@
-<div class="separator container">
-  <hr class="separator__line{% if section.settings.size == 'small' %}  separator__line--small{% endif %}" />
+<div class="separator  container">
+  {% include 'separator' %}
 </div>
-
-<style>
-  :root {
-    --color-separator: {{ section.settings.separator_color }};
-  }
-</style>
 
 {% schema %}
   {
     "name": "Separator",
     "settings": [
-      {
-        "type": "color",
-        "id": "separator_color",
-        "label": "Color"
-      },
       {
         "type": "select",
         "id": "size",

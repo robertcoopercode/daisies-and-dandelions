@@ -23,14 +23,6 @@ $inventory-diameter: 70px;
             background-color: var(--color-inventory-two);
         }
     }
-
-    &:nth-last-child(-n+3) {
-        display: none;
-
-        @include media-query('medium-up') {
-            display: unset;
-        }
-    }
 }
 
 .product__image {

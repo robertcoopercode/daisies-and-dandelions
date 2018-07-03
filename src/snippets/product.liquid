@@ -1,8 +1,13 @@
+{% assign quantity = product.selected_or_first_available_variant.inventory_quantity %}
+{% assign inventory_management = product.selected_or_first_available_variant.inventory_management %}
+
 <a href="{{ product.url | within: collection }}" class="product">
+    {% if quantity < 10 and inventory_management == "shopify" %}
       <span class="product__inventory">
-        <span class="product__inventory-number">{{ product.selected_or_first_available_variant.inventory_quantity }}</span>
+        <span class="product__inventory-number">{{ quantity }}</span>
         <span class="product__inventory-text">left</span>
       </span>
+    {% endif %}
     {% if product.featured_image != blank %}
         <div class="product__image">
             {% include 'responsive-image' with

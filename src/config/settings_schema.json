@@ -69,6 +69,12 @@
         "id": "color_inventory_two",
         "label": "Product inventory bubble 2",
         "default": "#D4AFB9"
+      },
+      {
+        "type": "color",
+        "id": "color_separator",
+        "label": "Section separator",
+        "default": "#436043"
       }
     ]
   },

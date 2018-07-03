@@ -1,0 +1,134 @@
+<div class="contact  container">
+    <h1 class="contact__title">{{ section.settings.title }}</h1>
+    <p class="contact__description">{{ section.settings.description }}</p>
+
+    {% form 'contact', class: "contact__form" %}
+
+        {% if form.posted_successfully? %}
+            <p class="form-success">
+                {{ 'contact.form.post_success' | t }}
+            </p>
+        {% endif %}
+
+        {{ form.errors | default_errors }}
+        
+        <div class="contact__form-field  contact__form-field--half">
+            <label class="contact__form-label" for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+            <input class="contact__form-input"
+                    type="text"
+                   name="contact[name]"
+                   id="ContactFormName"
+                   placeholder="{{ 'contact.form.namePlaceholder' | t }}"
+                   >
+            
+        </div>
+        <div class="contact__form-field  contact__form-field--half">
+            <label class="contact__form-label" for="ContactFormEmail">{{ 'contact.form.email' | t }}</label>
+            <input class="contact__form-input"
+                    type="email"
+                   name="contact[email]"
+                   id="ContactFormEmail"
+                   placeholder="{{ 'contact.form.emailPlaceholder' | t }}"
+                   spellcheck="false"
+                   autocomplete="off"
+                   autocapitalize="off">
+            
+        </div>
+        
+        <div class="contact__form-field  contact__form-field--half">
+            <label class="contact__form-label" for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
+            <input class="contact__form-input"
+                   type="tel"
+                   name="contact[phone]"
+                   id="ContactFormPhone"
+                   placeholder="{{ 'contact.form.phonePlaceholder' | t }}"
+                   pattern="[0-9\-]*">
+            
+        </div>
+
+        <div class="contact__form-field  contact__form-field--half">
+            <label class="contact__form-label" for="ContactFormDate">{{ 'contact.form.date' | t }}</label>
+            <input class="contact__form-input"
+                   type="text"
+                   name="contact[date]"
+                   id="ContactFormDate"
+                   placeholder="{{ 'contact.form.datePlaceholder' | t }}">
+
+        </div>
+        
+        <div class="contact__form-field  contact__form-field--half">
+            <fieldset class="contact__options">
+                <legend class="contact__legend">{{ 'contact.form.meetingTime' | t }}</legend>
+                <input type="checkbox" id="meetingTime1" name="meetingTime">
+                <label for="meetingTime1">Weekday Mornings (8am - 11am)</label>
+                <input type="checkbox" id="meetingTime2" name="meetingTime">
+                <label for="meetingTime2">Weekday Afternoons (12pm - 4pm)</label>
+                <input type="checkbox" id="meetingTime3" name="meetingTime">
+                <label for="meetingTime3">Weekday Evenings (5pm - 8pm)</label>
+                <input type="checkbox" id="meetingTime4" name="meetingTime">
+                <label for="meetingTime4">Weekend Mornings (8am - 11am)</label>
+                <input type="checkbox" id="meetingTime5" name="meetingTime">
+                <label for="meetingTime5">Weekend Afternoons (12pm - 4pm)</label>
+                <input type="checkbox" id="meetingTime6" name="meetingTime">
+                <label for="meetingTime6">Weekend Evenings (5pm - 8pm)</label>
+            </fieldset>
+        </div>
+        
+        <div class="contact__form-field  contact__form-field--half">
+            <fieldset class="contact__options">
+                <legend class="contact__legend">{{ 'contact.form.referral' | t }}</legend>
+                <input type="checkbox" id="referral1" name="referral">
+                <label for="referral1">Friend</label>
+                <input type="checkbox" id="referral2" name="referral">
+                <label for="referral2">Word of Mouth</label>
+                <input type="checkbox" id="referral3" name="referral">
+                <label for="referral3">Social Media (Facebook or Instagram)</label>
+                <input type="checkbox" id="referral4" name="referral">
+                <label for="referral4">Google Search</label>
+                <input type="checkbox" id="referral5" name="referral">
+                <label for="referral5">Other</label>
+            </fieldset>
+        </div>
+
+
+        <div class="contact__form-field">
+            <label class="contact__form-label" for="ContactFormReferral">{{ 'contact.form.referral' | t }}</label>
+            <input class="contact__form-input"
+                   type="text"
+                   name="contact[referral]"
+                   id="ContactFormReferral"
+                   placeholder="{{ 'contact.form.datePlaceholder' | t }}">
+
+        </div>
+
+        <div class="contact__form-field">
+            <label class="contact__form-label" for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+            <textarea class="contact__form-textarea" 
+                    rows="10"
+                      name="contact[body]"
+                      id="ContactFormMessage"
+                      placeholder="{{ 'contact.form.weddingMessagePlaceholder' | t }}"></textarea>
+        </div>
+
+        <input type="submit" class="contact__form-button" value="{{ 'contact.form.send' | t }}">
+
+    {% endform %}
+</div>
+
+{% schema %}
+  {
+    "name": "Wedding Page",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Main text"
+        }
+    ]
+  }
+{% endschema %}

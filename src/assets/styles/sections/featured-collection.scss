@@ -11,6 +11,16 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  .product {
+    &:nth-last-child(-n+3) {
+      display: none;
+
+      @include media-query('medium-up') {
+        display: unset;
+      }
+    }
+  }
 }
 
 .featured-collection__title {

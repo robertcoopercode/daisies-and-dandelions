@@ -126,10 +126,17 @@
       "namePlaceholder": "Jennifer Lawrence",
       "email": "Email",
       "emailPlaceholder": "jennifer.lawrence@gmail.com",
+      "phone": "Phone",
+      "phonePlaceholder": "613-123-4567",
+      "date": "Wedding Date",
+      "datePlaceholder": "July 1st 2019",
       "subject": "Subject",
       "subjectPlaceholder": "Flowers required for upcoming event",
       "message": "Message",
       "messagePlaceholder": "What are your requirements?",
+      "weddingMessagePlaceholder": "Any details we should know prior to meeting?",
+      "meetingTime": "Preferred Meeting Time",
+      "referral": "How did you hear about us?",
       "send": "Send",
       "post_success":
         "Thanks for contacting us. We'll get back to you as soon as possible."

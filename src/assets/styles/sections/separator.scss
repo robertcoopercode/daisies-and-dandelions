@@ -5,7 +5,7 @@
 .separator__line {
     margin: 0 auto;
     border: 0;
-    border-top: 4px solid var(--color-separator);
+    border-top: 4px solid $color-separator;
     width: 80%;
     
     &--small {

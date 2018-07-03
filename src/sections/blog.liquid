@@ -1,0 +1,80 @@
+<div class="blog  container">
+    <h1>{{ blog.title }}</h1>
+
+    {% for article in blog.articles %}
+        <h3>
+            <a href="{{ article.url }}">{{ article.title }}</a>
+        </h3>
+
+        {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+
+        <p>
+            {{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}
+        </p>
+
+        {% if article.image %}
+            <a href="{{ article.url }}">
+                {% include 'responsive-image' with
+                    image: article.image,
+                    max_width: 1024,
+                    max_height: 1024
+                %}
+            </a>
+        {% endif %}
+
+        <div class="rte">
+            {{ article.content }}
+        </div>
+
+        <p>
+            <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a>
+        </p>
+
+    {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Blog page",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "text",
+            "label": "Main text"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "things_title",
+            "label": "Things title"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "post",
+        "name": "Blog Post",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+            {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

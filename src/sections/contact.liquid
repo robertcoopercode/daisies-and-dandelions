@@ -12,7 +12,7 @@
 
         {{ form.errors | default_errors }}
         
-        <div class="contact__form-field">
+        <div class="contact__form-field  contact__form-field--half">
             <label class="contact__form-label" for="ContactFormName">{{ 'contact.form.name' | t }}</label>
             <input class="contact__form-input"
                     type="text"
@@ -22,7 +22,7 @@
                    >
             
         </div>
-        <div class="contact__form-field">
+        <div class="contact__form-field  contact__form-field--half">
             <label class="contact__form-label" for="ContactFormEmail">{{ 'contact.form.email' | t }}</label>
             <input class="contact__form-input"
                     type="email"
@@ -38,11 +38,10 @@
         <div class="contact__form-field">
             <label class="contact__form-label" for="ContactFormSubject">{{ 'contact.form.subject' | t }}</label>
             <input class="contact__form-input"
-                   type="tel"
+                   type="text"
                    name="contact[subject]"
                    id="ContactFormSubject"
-                   placeholder="{{ 'contact.form.subjectPlaceholder' | t }}"
-                   pattern="[0-9\-]*">
+                   placeholder="{{ 'contact.form.subjectPlaceholder' | t }}">
             
         </div>
 
