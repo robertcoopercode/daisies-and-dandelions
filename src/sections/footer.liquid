@@ -1,5 +1,5 @@
 <footer class="footer container">
-
+    {% include 'separator', with class: "footer__separator", size: "small" %}
     {%- assign footer_linklist = section.settings.footer_linklist -%}
     {% if linklists[footer_linklist].links.size > 0 %}
         <ul class="footer__menu">
@@ -18,7 +18,7 @@
 
       {% if settings[social_link] != blank %}
         <li class="footer__social-list-item">
-          <a class="footer__social-list-item-link  footer__social-list-item-link--{{ social_handle }}" href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+          <a class="footer__social-list-item-link  footer__social-list-item-link--{{ social_handle }}" href="{{ settings[social_link] }}" rel="noopener noreferrer" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
             {% include social_icon %}
             <span class="icon-fallback-text">{{ social }}</span>
           </a>

@@ -1,9 +1,13 @@
 .events__title {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .events__event {
-    margin: 60px 0;
+    margin: 80px 0;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 .event {
@@ -53,6 +57,7 @@
     margin-bottom: 30px;
 
     @include media-query('medium-up') {
+        align-items: flex-start;
         flex-basis: 65%;
         padding-left: 30px;
         flex-grow: 1;
@@ -95,11 +100,6 @@
 .event__location {
     line-height: 24px;
     letter-spacing: 0.8px;
-}
-
-.event__button {
-    background-color: var(--color-event-button-background);
-    color: var(--color-event-button-text);
 }
 
 .event__button {

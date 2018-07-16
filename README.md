@@ -15,3 +15,11 @@ $ yarn start
 ```
 
 In order for the browser preview of the theme to work correclty, you must first visit `https://localhost:8080` and accept the https warning. If this isn't done, all the styles will appear as broken.
+
+## Deploy
+
+To deploy the theme to the connected Shopify store:
+
+```
+$ yarn deploy
+```

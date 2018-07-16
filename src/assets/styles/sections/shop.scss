@@ -8,17 +8,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding:  40px 30px;
-    
+    padding: 40px 30px;
+
     @include media-query('medium-up') {
         width: 80%;
-        padding:  40px 30px;
+        padding: 40px 30px;
         margin: 0;
     }
-    
+
     @include media-query('large-up') {
         min-height: 340px;
-        padding:  50px 50px;
+        padding: 50px 50px;
     }
 }
 
@@ -32,7 +32,7 @@
     @include media-query('medium-up') {
         text-align: left;
     }
-    
+
     @include media-query('large-up') {
         font-size: 40px;
         letter-spacing: 3px;
@@ -45,7 +45,7 @@
     letter-spacing: 0.6px;
     line-height: 26px;
     margin: 20px 0 25px;
-    
+
     @include media-query('medium-up') {
         width: 70%;
         text-align: left;
@@ -67,7 +67,7 @@
     letter-spacing: 0.6px;
     text-align: center;
     font-weight: 400;
-    
+
     @include media-query('medium-up') {
         align-self: flex-start;
         text-align: left;
@@ -77,7 +77,7 @@
 
 .shop__header-image {
     display: none;
-    
+
     @include media-query('medium-up') {
         position: absolute;
         right: 20px;
@@ -95,10 +95,11 @@
     max-width: $grid-max-width;
     padding: 0 30px;
     justify-content: center;
-    margin-bottom: -30px;
+    margin-bottom: 60px;
 
     @include media-query('large-up') {
         padding-left: 0;
         padding-right: 0;
+        margin-bottom: 80px;
     }
 }

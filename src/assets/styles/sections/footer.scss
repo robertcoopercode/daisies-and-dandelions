@@ -1,4 +1,10 @@
-.footer {}
+.footer {
+    padding-top: 0;
+}
+
+.footer__separator {
+    padding-bottom: 80px;
+}
 
 .footer__menu {
     list-style: none;
@@ -55,11 +61,11 @@
 
 .footer__social-list-item-link {
     padding: 0 20px;
-    
+
     &--facebook {
         svg {
             fill: #444444;
-            
+
             &:hover {
                 fill: $color-facebook;
             }
@@ -85,7 +91,7 @@
             }
         }
     }
-    
+
     svg {
         height: 40px;
         width: auto;

@@ -1,37 +1,37 @@
 $tag-bottom-margin: 30px;
 
 .image-and-tags__title {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
 }
 
 .image-and-tags__tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: -$tag-bottom-margin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: -$tag-bottom-margin;
 }
 
 .tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  color: #ffffff;
-  width: 200px;
-  font-size: 18px;
-  text-align: center;
-  letter-spacing: 0.6px;
-  margin: 0 10px $tag-bottom-margin;
-  box-shadow: #000000 0 0 10px 0px;
-  font-weight: 400;
-  
-  &:nth-last-child(-n + 4) {
-    display: none;
-  }
-  
-  @include media-query('medium-up') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #ffffff;
+    width: 200px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    margin: 0 10px $tag-bottom-margin;
+    box-shadow: #b0b0b0 0 0 10px 0px;
+    font-weight: 400;
+
     &:nth-last-child(-n + 4) {
-      display: flex;
+        display: none;
     }
-  }
+
+    @include media-query('medium-up') {
+        &:nth-last-child(-n + 4) {
+            display: flex;
+        }
+    }
 }
