@@ -1,7 +1,7 @@
 <div class="cta-cards  container" data-section-id="{{ section.id }}">
     {% for block in section.blocks %}
       <div class="card">
-        <img class="card__image" src="{{ block.settings.image | img_url: "400x", scale: 2 }}" />
+        <img class="card__image" src="{{ block.settings.image | img_url: "800x", scale: 2 }}" />
         <div class="card__bottom">
           <h2 class="card__title">{{ block.settings.title }}</h2>
           <p class="card__description">{{ block.settings.description }}</p>

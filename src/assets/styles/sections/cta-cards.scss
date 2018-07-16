@@ -19,10 +19,10 @@ $card-bottom-margin: 40px;
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 40px;
-    
+
     &:hover {
         .card__button {
-            background-color: var(--color-cta-button-background-hover); // background 1
+            background-color: var(--color-cta-button-background-hover);
         }
     }
 
@@ -34,7 +34,7 @@ $card-bottom-margin: 40px;
 
 .card__bottom {
     padding: 30px;
-    background-color: var(--color-cta-background); // background 3
+    background-color: var(--color-cta-background);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,19 +56,19 @@ $card-bottom-margin: 40px;
 
 .card__button {
     padding: 8px 14px;
-    background-color: var(--color-cta-button-background); // background 2
-    color: var(--color-cta-button-text); // white
+    background-color: var(--color-cta-button-background);
+    color: var(--color-cta-button-text);
     font-weight: 400;
     border-radius: 5px;
     text-decoration: none;
     letter-spacing: 0.8px;
-    
+
     &:focus {
-        color: #ffffff;
+        color: var(--color-cta-button-text);
     }
-    
+
     &:hover {
-        color: var(--color-cta-button-text-hover); // highlight
+        color: var(--color-cta-button-text-hover);
         box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
         transform: translateY(-1px);
     }

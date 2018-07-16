@@ -1,0 +1,126 @@
+.events__title {
+    margin-bottom: 60px;
+}
+
+.events__event {
+    margin: 60px 0;
+}
+
+.event {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event__first-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: center;
+
+    @include media-query('medium-up') {
+        align-items: flex-start;
+        flex-basis: 35%;
+        flex-shrink: 0;
+    }
+}
+
+.event__image {
+    flex-shrink: 0;
+    margin-top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    order: 1;
+
+    @include media-query('medium-up') {
+        flex-shrink: 1;
+        order: 0;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+}
+
+.event__details-wrapper {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.event__second-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: -1;
+    margin-bottom: 30px;
+
+    @include media-query('medium-up') {
+        flex-basis: 65%;
+        padding-left: 30px;
+        flex-grow: 1;
+        order: 0;
+        margin-bottom: 0;
+    }
+}
+
+.event__title {
+    font-family: $font-body;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.event__content {
+    line-height: 24px;
+    letter-spacing: 0.8px;
+    margin-top: -15px;
+
+    @include media-query('medium-up') {
+        text-align: left;
+    }
+}
+
+.event__heading {
+    font-family: $font-body;
+    font-size: 18px;
+    margin-bottom: -15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.event__date {
+    margin-bottom: 20px;
+}
+
+.event__date,
+.event__location {
+    line-height: 24px;
+    letter-spacing: 0.8px;
+}
+
+.event__button {
+    background-color: var(--color-event-button-background);
+    color: var(--color-event-button-text);
+}
+
+.event__button {
+    padding: 8px 14px;
+    background-color: var(--color-event-button-background);
+    color: var(--color-event-button-text);
+    font-weight: 400;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    margin-top: 20px;
+    display: inline-block;
+
+    &:focus {
+        color: var(--color-event-button-text);
+    }
+
+    &:hover {
+        background-color: var(--color-event-button-background-hover);
+        color: var(--color-event-button-text-hover);
+        box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
+        transform: translateY(-1px);
+    }
+}

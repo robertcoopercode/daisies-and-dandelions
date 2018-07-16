@@ -2,29 +2,49 @@
     <h1 class="events__title">{{ section.settings.title }}</h1>
 
     {% for block in section.blocks %}
-      <div class="event">
-          <h3 class="event__title">{{ block.settings.title }}</h3>
-          <div class="event__top-container">
-              {% include 'responsive-image' with
-                  image: block.settings.image,
-                  max_width: 400,
-                  max_height: 400
-              %}
-            <div class="event_content  rte">
+      <div class="event  events__event">
+          <div class="event__first-container">
+            {% include 'responsive-image' with
+                image: block.settings.image,
+                max_width: 400,
+                max_height: 400,
+                wrapper_class: "event__image"
+            %}
+            <div class="event__details-wrapper">
+              <h4 class="event__heading">Date & Time</h4>
+              <div class="event__date  rte">
+                {{ block.settings.date }}
+              </div>
+              <h4 class="event__heading">Location</h4>
+              <div class="event__location  rte">
+                {{ block.settings.location }}
+              </div>
+            </div>
+          </div>
+          <div class="event__second-container">
+            <h3 class="event__title">{{ block.settings.title }}</h3>
+            <div class="event__content  rte">
               {{ block.settings.content }}
             </div>
-          </div>
-          <div class="event__bottom-container">
-            <div class="event__date  rte">
-              {{ block.settings.date }}
-            </div>
-            <div class="event__location  rte">
-              {{ block.settings.location }}
-            </div>
+            {% if block.settings.cta_text != '' and block.settings.cta_link != '' %}
+              <a class="event__button" href="{{ block.settings.cta_link }}" target="_blank" rel="noopener noreferrer">{{ block.settings.cta_text }}</a>
+            {% endif %}
           </div>
       </div>
+      {% if forloop.last != true %}
+        {% include 'separator' with class: "events__separator" %}
+      {% endif %}
     {% endfor %}
 </div>
+
+<style>
+  :root {
+    --color-event-button-background: {{ section.settings.button_background_color }};
+    --color-event-button-background-hover: {{ section.settings.button_background_color_hover }};
+    --color-event-button-text: {{ section.settings.button_text_color }};
+    --color-event-button-text-hover: {{ section.settings.button_text_color_hover }};
+  }
+</style>
 
 {% schema %}
   {
@@ -34,6 +54,26 @@
             "type": "text",
             "id": "title",
             "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color",
+          "label": "Button background color"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color_hover",
+          "label": "Button background color (hover)"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text color"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color_hover",
+          "label": "Button text color (hover)"
         }
     ],
     "blocks": [
@@ -61,10 +101,20 @@
             "id": "location",
             "label": "Event location"
           },
-            {
+          {
             "type": "textarea",
             "id": "content",
             "label": "Event description"
+          },
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA button text"
+          },
+          {
+            "type": "text",
+            "id": "cta_link",
+            "label": "CTA button link"
           }
         ]
       }
