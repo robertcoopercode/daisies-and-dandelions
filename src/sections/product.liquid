@@ -41,7 +41,7 @@
       {{ product.description }}
     </div>
 
-    <form action="/cart/add" method="post" enctype="multipart/form-data">
+    <form class="product-page__cart-form" action="/cart/add" method="post" enctype="multipart/form-data">
       {% unless product.has_only_default_variant %}
         {% for option in product.options_with_values %}
           <div class="selector-wrapper js">
@@ -92,9 +92,16 @@
         {% endfor %}
       </select>
 
-      <div class="product-page__quantity-wrapper">
-        <label class="product-page__quantity-label" for="Quantity">{{ 'products.product.quantity' | t }}</label>
-        <input class="product-page__quantity" type="number" id="Quantity" name="quantity" value="1" min="1">
+      <div class="product-quantity  product-page__quantity-wrapper">
+          <button class="product-quantity__button  product-quantity__button--decrement">
+              <span class="visually-hidden">Decrease Quantity:</span>
+              {% include 'icon-minus' %}
+          </button>
+          <input class="product-quantity__quantity" type="number" id="Quantity" name="quantity" value="1" min="1" pattern="[0-9]*">
+          <button class="product-quantity__button  product-quantity__button--increment">
+              <span class="visually-hidden">Increase Quantity:</span>
+              {% include 'icon-plus' %}
+          </button>
       </div>
 
       <button

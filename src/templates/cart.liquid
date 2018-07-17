@@ -1,13 +1,12 @@
 <div class="cart  container">
 {% if cart.item_count > 0 %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
+  <h1 class="cart__title">{{ 'cart.general.title' | t }}</h1>
 
   <form action="/cart" method="post" novalidate>
-    <table class="responsive-table">
+    <table class="cart-table  responsive-table">
       <thead class="small--hide">
         <tr>
           <th colspan="2">{{ 'cart.label.product' | t }}</th>
-          <th>{{ 'cart.label.price' | t }}</th>
           <th>{{ 'cart.label.quantity' | t }}</th>
           <th>{{ 'cart.label.total' | t }}</th>
         </tr>
@@ -24,25 +23,23 @@
         helpers used for responsive-table labels
         {% endcomment %}
 
-          <tr class="responsive-table-row">
+          <tr class="cart-table__row  responsive-table-row">
 
-            <td data-label="{{ 'customer.order.product' | t }}">
+            <td class="cart-table__column  cart-table__column--image" data-label="{{ 'customer.order.product' | t }}">
 
               {% if item.image != blank %}
                 <a href="{{ item.url | within: collections.all }}">
-                  {{ item | img_url: '240x240' | img_tag: item.title }}
+                  {{ item | img_url: '120x120' | img_tag: item.title }}
                 </a>
               {% endif %}
 
             </td>
-            <td>
-              <a href="{{ item.url }}">{{ item.product.title }}</a>
+            <td class="cart-table__column  cart-table__column--title">
+              <a class="cart-table__product-title" href="{{ item.url }}">{{ item.product.title }}</a>
 
               {% unless item.product.has_only_default_variant %}
                 <p>{{ item.variant.title }}</p>
               {% endunless %}
-
-              <p>{{ item.vendor }}</p>
 
               {%- assign property_size = item.properties | size -%}
 
@@ -61,19 +58,9 @@
                 {% endfor %}
               {% endif %}
 
-              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
-                <small>{{ 'cart.general.remove' | t }}</small>
+              <a class="cart-table__product-remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                {{ 'cart.general.remove' | t }}
               </a>
-            </td>
-            <td data-label="{{ 'cart.label.price' | t }}">
-              {% if item.original_line_price != item.line_price %}
-                <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
-                {{ item.price | money }}
-                <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
-                <s>{{ item.original_price | money }}</s>
-              {% else %}
-                {{ item.price | money }}
-              {% endif %}
             </td>
             <td data-label="{{ 'cart.label.quantity' | t }}">
               <input type="number"

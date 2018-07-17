@@ -76,6 +76,26 @@ sections.register('product', {
         this.updateImages.bind(this),
       );
     }
+
+    $('.product-quantity__button--increment').click((event) => {
+      event.preventDefault();
+      $('.product-quantity__quantity').val((index, value) => {
+        const parsedValue = parseInt(value);
+        return parsedValue + 1;
+      });
+    });
+
+    $('.product-quantity__button--decrement').click((event) => {
+      event.preventDefault();
+      $('.product-quantity__quantity').val((index, value) => {
+        const parsedValue = parseInt(value);
+        if (parsedValue > 1) {
+          return parsedValue - 1;
+        } else {
+          return 1;
+        }
+      });
+    });
   },
 
   setActiveThumbnail(imageId) {
@@ -185,4 +205,5 @@ sections.register('product', {
   onUnload() {
     this.$container.off(this.namespace);
   },
+
 });
