@@ -2,15 +2,9 @@
 {% if cart.item_count > 0 %}
   <h1 class="cart__title">{{ 'cart.general.title' | t }}</h1>
 
-  <form action="/cart" method="post" novalidate>
+  <form class="cart-form" action="/cart" method="post" novalidate>
+    <input class="cart-update" type="submit" name="update" value="{{ 'cart.general.update' | t }}">
     <table class="cart-table  responsive-table">
-      <thead class="small--hide">
-        <tr>
-          <th colspan="2">{{ 'cart.label.product' | t }}</th>
-          <th>{{ 'cart.label.quantity' | t }}</th>
-          <th>{{ 'cart.label.total' | t }}</th>
-        </tr>
-      </thead>
       <tbody>
 
         {% for item in cart.items %}
@@ -62,15 +56,16 @@
                 {{ 'cart.general.remove' | t }}
               </a>
             </td>
-            <td data-label="{{ 'cart.label.quantity' | t }}">
-              <input type="number"
+            <td class="cart-table__column  cart-table__column--quantity" data-label="{{ 'cart.label.quantity' | t }}">
+              {% include 'quantity-controls' %}
+              {% comment %} <input type="number"
                      name="updates[]"
                      id="updates_{{ item.key }}"
                      value="{{ item.quantity }}"
                      min="0"
-                     aria-label="{{ 'cart.general.item_quantity' | t }}">
+                     aria-label="{{ 'cart.general.item_quantity' | t }}"> {% endcomment %}
             </td>
-            <td data-label="{{ 'cart.label.total' | t }}">
+            <td class="cart-table__column  cart-table__column--total" data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
             </td>
           </tr>
@@ -79,19 +74,23 @@
       </tbody>
     </table>
 
-    {% if settings.cart_notes_enable %}
-      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-      <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-    {% endif %}
-
-    <p>{{ 'cart.general.subtotal' | t }}</p>
-    <p>{{ cart.total_price | money }}</p>
-    {% if cart.total_discounts > 0 %}
-      <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
-    {% endif %}
-    <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
-    <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-    <input type="submit" name="checkout" class="button" value="{{ 'cart.general.checkout' | t }}">
+    <div class="cart-bottom">
+      <div class="cart-instructions">
+        <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+        <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+      </div>
+      <div class="cart-details">
+        <p>{{ 'cart.general.subtotal' | t }}</p>
+        <p>{{ cart.total_price | money }}</p>
+        {% if cart.total_discounts > 0 %}
+          <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+        {% endif %}
+        <input class="cart-submit" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}">
+        <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
+        {% if settings.cart_notes_enable %}
+      {% endif %}
+      </div>
+    </div>
   </form>
 {% else %}
   <h1>{{ 'cart.general.title' | t }}</h1>
