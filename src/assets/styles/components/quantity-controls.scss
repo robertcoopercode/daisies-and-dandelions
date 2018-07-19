@@ -1,0 +1,31 @@
+.quantity-controls {
+    display: flex;
+    border: 2px solid black;
+    padding: 5px 0;
+}
+
+.quantity-controls__button {
+    background: none;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.quantity-controls__quantity {
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    width: 40px;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.quantity-controls__quantity::-webkit-outer-spin-button,
+.quantity-controls__quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

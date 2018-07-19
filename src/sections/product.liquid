@@ -92,7 +92,7 @@
         {% endfor %}
       </select>
 
-      {% include 'quantity-controls' %}
+      {% include 'quantity-controls', with class: "product-page__quantity-wrapper" %}
 
       {% if current_variant.available %}
         {% assign button_text = 'products.product.add_to_cart' | t %}

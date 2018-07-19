@@ -74,12 +74,12 @@
 
     <div class="cart-bottom">
       <div class="cart-instructions">
-        <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-        <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+        <label class="cart-instructions__label" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+        <textarea class="cart-instructions__textarea" name="note" id="CartSpecialInstructions" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
       </div>
       <div class="cart-details">
-        <p>{{ 'cart.general.subtotal' | t }}</p>
-        <p>{{ cart.total_price | money }}</p>
+        <p class="cart-details__subtotal">{{ 'cart.general.subtotal' | t }}</p>
+        <p class="cart-details__subtotal-price">{{ cart.total_price | money }}</p>
         {% if cart.total_discounts > 0 %}
           <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
         {% endif %}
@@ -88,7 +88,7 @@
 
         {% include 'button', with class: "cart-submit", text: checkout_button_text, is_submit_button: true, name: 'checkout' %}
 
-        <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
+        <p class="cart-details__shipping-note">{{ 'cart.general.shipping_at_checkout' | t }}</p>
         {% if settings.cart_notes_enable %}
       {% endif %}
       </div>

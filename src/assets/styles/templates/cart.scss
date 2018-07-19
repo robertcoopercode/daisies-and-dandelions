@@ -1,5 +1,5 @@
 .cart__title {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .cart-form {
@@ -9,6 +9,7 @@
 
 .cart-update {
     align-self: flex-end;
+    margin-bottom: 40px;
 }
 
 .cart-table {
@@ -61,6 +62,11 @@
     margin-bottom: 10px;
 }
 
+.cart-table__product-remove {
+    color: black;
+    letter-spacing: 0.6px;
+}
+
 .cart-table__row {
     display: flex;
     position: relative;
@@ -95,18 +101,62 @@
     align-items: flex-start;
 }
 
-.cart-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .cart-instructions {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
+.cart-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 0 40px;
+}
+
+.cart-details__subtotal {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.cart-details__subtotal-price {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.cart-details__shipping-note {
+    font-size: 12px;
+}
+
 .cart-submit {
     width: 200px;
+}
+
+.cart-instructions__label {
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cart-instructions__textarea {
+    position: relative;
+    display: block;
+    padding: 20px;
+    border: none;
+    background-color: $color-background-three;
+    border-radius: 5px;
+    letter-spacing: 0.8px;
+
+    &:focus {
+        outline: none;
+        border: 3px solid $color-background-one;
+        padding: 20px - 3px;
+    }
+
+    &::placeholder {
+        letter-spacing: 0.8px;
+        font-weight: 300;
+    }
 }

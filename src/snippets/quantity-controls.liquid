@@ -1,10 +1,10 @@
-<div class="product-quantity  product-page__quantity-wrapper">
-    <button class="product-quantity__button  product-quantity__button--decrement">
+<div class="quantity-controls{% if class %}  {{class}}{% endif %}">
+    <button class="quantity-controls__button  quantity-controls__button--decrement">
         <span class="visually-hidden">Decrease Quantity:</span>
         {% include 'icon-minus' %}
     </button>
     <input 
-        class="product-quantity__quantity" 
+        class="quantity-controls__quantity" 
         type="number" 
         id="Quantity" 
         {% if is_cart_page %}
@@ -17,7 +17,7 @@
         min="1" 
         pattern="[0-9]*"
     >
-    <button class="product-quantity__button  product-quantity__button--increment">
+    <button class="quantity-controls__button  quantity-controls__button--increment">
         <span class="visually-hidden">Increase Quantity:</span>
         {% include 'icon-plus' %}
     </button>
