@@ -1,11 +1,21 @@
 .button {
-  display: inline-block;
-  vertical-align: middle;
-  width: auto;
-  border: 0;
-  text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
-  user-select: none;
-  appearance: none;
+    padding: 8px 14px;
+    background-color: var(--color-button-background-one);
+    color: var(--color-button-text-one);
+    font-weight: 400;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    border: 0;
+
+    &:focus {
+        color: var(--color-button-text-two);
+    }
+
+    &:hover {
+        background-color: var(--color-button-background-two);
+        color: var(--color-button-text-two);
+        box-shadow: $color-button-shadow;
+        transform: translateY(-1px);
+    }
 }

@@ -3,7 +3,11 @@
   <h1 class="cart__title">{{ 'cart.general.title' | t }}</h1>
 
   <form class="cart-form" action="/cart" method="post" novalidate>
-    <input class="cart-update" type="submit" name="update" value="{{ 'cart.general.update' | t }}">
+    
+    {% assign update_button_text = 'cart.general.update' | t %}
+
+    {% include 'button', with class: "cart-update", text: update_button_text, is_submit_button: true, name: 'update' %}
+
     <table class="cart-table  responsive-table">
       <tbody>
 
@@ -57,13 +61,7 @@
               </a>
             </td>
             <td class="cart-table__column  cart-table__column--quantity" data-label="{{ 'cart.label.quantity' | t }}">
-              {% include 'quantity-controls' %}
-              {% comment %} <input type="number"
-                     name="updates[]"
-                     id="updates_{{ item.key }}"
-                     value="{{ item.quantity }}"
-                     min="0"
-                     aria-label="{{ 'cart.general.item_quantity' | t }}"> {% endcomment %}
+              {% include 'quantity-controls', with is_cart_page: true %}
             </td>
             <td class="cart-table__column  cart-table__column--total" data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
@@ -85,7 +83,11 @@
         {% if cart.total_discounts > 0 %}
           <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
         {% endif %}
-        <input class="cart-submit" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}">
+
+        {% assign checkout_button_text = 'cart.general.checkout' | t %}
+
+        {% include 'button', with class: "cart-submit", text: checkout_button_text, is_submit_button: true, name: 'checkout' %}
+
         <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
         {% if settings.cart_notes_enable %}
       {% endif %}

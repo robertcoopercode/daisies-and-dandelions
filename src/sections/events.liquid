@@ -27,7 +27,7 @@
               {{ block.settings.content }}
             </div>
             {% if block.settings.cta_text != '' and block.settings.cta_link != '' %}
-              <a class="event__button" href="{{ block.settings.cta_link }}" target="_blank" rel="noopener noreferrer">{{ block.settings.cta_text }}</a>
+              {% include 'button', with class: "event__button", text: block.settings.cta_text, link: block.settings.cta_link %}
             {% endif %}
           </div>
       </div>

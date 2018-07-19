@@ -21,7 +21,7 @@
     flex-direction: column;
     padding: 0 20px;
     margin-bottom: 40px;
-    
+
     @include media-query('medium-up') {
         &--half {
             width: 50%;
@@ -46,12 +46,12 @@
     border-bottom: 3px solid $color-background-two;
     padding: 10px 0;
     letter-spacing: 0.8px;
-    
+
     &:focus {
         outline: none;
         border-bottom: 3px solid $color-background-one;
     }
-    
+
     &::placeholder {
         letter-spacing: 0.8px;
         font-weight: 300;
@@ -81,24 +81,6 @@
 
 .contact__form-button {
     margin: auto;
-    padding: 8px 14px;
-    background-color: $color-background-two;
-    color: $color-text-two;
-    font-weight: 400;
-    border-radius: 5px;
-    text-decoration: none;
-    letter-spacing: 0.8px;
-
-    &:focus {
-        color: $color-text-two;
-    }
-
-    &:hover {
-        background-color: $color-background-one;
-        color: $color-highlight-one;
-        box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
-        transform: translateY(-1px);
-    }
 }
 
 .contact__options {
@@ -107,9 +89,11 @@
 }
 
 // Checkboxes
-input[type="checkbox"] { display: none; }
+input[type='checkbox'] {
+    display: none;
+}
 
-input[type="checkbox"] + label {
+input[type='checkbox'] + label {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -120,9 +104,11 @@ input[type="checkbox"] + label {
     -ms-user-select: none;
 }
 
-input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+input[type='checkbox'] + label:last-child {
+    margin-bottom: 0;
+}
 
-input[type="checkbox"] + label:before {
+input[type='checkbox'] + label:before {
     content: '';
     display: block;
     width: 20px;
@@ -131,11 +117,11 @@ input[type="checkbox"] + label:before {
     position: absolute;
     left: 0;
     top: 0;
-    -webkit-transition: all .12s, border-color .08s;
-    transition: all .12s, border-color .08s;
+    -webkit-transition: all 0.12s, border-color 0.08s;
+    transition: all 0.12s, border-color 0.08s;
 }
 
-input[type="checkbox"]:checked + label:before {
+input[type='checkbox']:checked + label:before {
     width: 10px;
     top: -5px;
     left: 5px;

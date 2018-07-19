@@ -5,7 +5,7 @@
         <div class="card__bottom">
           <h2 class="card__title">{{ block.settings.title }}</h2>
           <p class="card__description">{{ block.settings.description }}</p>
-          <a class="card__button" href="/pages/{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+          {% include 'button', with text: block.settings.button_text, link: block.settings.button_link, is_page_link: true %}
         </div>
       </div>
     {% endfor %}
@@ -14,10 +14,6 @@
 <style>
   :root {
     --color-cta-background: {{ section.settings.background_color }};
-    --color-cta-button-background: {{ section.settings.button_background_color }};
-    --color-cta-button-background-hover: {{ section.settings.button_background_color_hover }};
-    --color-cta-button-text: {{ section.settings.button_text_color }};
-    --color-cta-button-text-hover: {{ section.settings.button_text_color_hover }};
   }
 </style>
 
@@ -25,26 +21,6 @@
   {
     "name": "Call to Action Cards",
     "settings": [
-      {
-        "type": "color",
-        "id": "button_background_color",
-        "label": "Button background color"
-      },
-      {
-        "type": "color",
-        "id": "button_background_color_hover",
-        "label": "Button background color (hover)"
-      },
-      {
-        "type": "color",
-        "id": "button_text_color",
-        "label": "Button text color"
-      },
-      {
-        "type": "color",
-        "id": "button_text_color_hover",
-        "label": "Button text color (hover)"
-      },
       {
         "type": "color",
         "id": "background_color",

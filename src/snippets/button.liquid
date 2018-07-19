@@ -1,0 +1,34 @@
+{%- comment -%}
+
+    Accepts:
+    - text: {String} Text to display on the button
+    - link: {String} Page link or URL the button should link to
+    - class: {String} Class to add to the button
+    - is_page_link: {Boolean} If the provide link is a page link
+    - is_submit_button: {Boolean} If the button needs to submit a form
+    - is_disabled: {Boolean} If the button should be disabled
+    - name: {String} Name attribute to better identify a submit button
+
+{%- endcomment -%}
+
+{% if is_page_link %}
+  {% assign button_link = "/pages/" | append: link %}
+{% else %}
+  {% assign button_link = link %}
+{% endif %}
+
+{% if is_submit_button %}
+  <button
+    class="button{% if class %}  {{ class }}{% endif %}"
+    {% if name %}name={{ name }}{% endif %}
+    {% if is_disabled %}disabled="disabled"{% endif %}
+    >
+    {{ text}}
+  </button>
+{% else %}
+  <a 
+    class="button{% if class %}  {{ class }}{% endif %}" 
+    href="{{ button_link }}"
+    {% if is_page_link != true %}target="_blank" rel="noopener noreferrer"{% endif %}
+  >{{ text }}</a>
+{% endif %}

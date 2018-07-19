@@ -20,12 +20,6 @@ $card-bottom-margin: 40px;
     overflow: hidden;
     margin-bottom: 40px;
 
-    &:hover {
-        .card__button {
-            background-color: var(--color-cta-button-background-hover);
-        }
-    }
-
     @include media-query('medium-up') {
         width: 50%;
         margin: 0 20px 40px;
@@ -52,24 +46,4 @@ $card-bottom-margin: 40px;
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
-}
-
-.card__button {
-    padding: 8px 14px;
-    background-color: var(--color-cta-button-background);
-    color: var(--color-cta-button-text);
-    font-weight: 400;
-    border-radius: 5px;
-    text-decoration: none;
-    letter-spacing: 0.8px;
-
-    &:focus {
-        color: var(--color-cta-button-text);
-    }
-
-    &:hover {
-        color: var(--color-cta-button-text-hover);
-        box-shadow: rgba(0, 0, 0, 0.35) 0 1px 3px 1px;
-        transform: translateY(-1px);
-    }
 }

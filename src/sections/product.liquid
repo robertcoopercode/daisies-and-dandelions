@@ -94,20 +94,15 @@
 
       {% include 'quantity-controls' %}
 
-      <button
-        class="product-page__add-button"
-        type="submit"
-        name="add"
-        data-add-to-cart
-        {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-          <span data-add-to-cart-text>
-            {% if current_variant.available %}
-              {{ 'products.product.add_to_cart' | t }}
-            {% else %}
-              {{ 'products.product.sold_out' | t }}
-            {% endif %}
-          </span>
-      </button>
+      {% if current_variant.available %}
+        {% assign button_text = 'products.product.add_to_cart' | t %}
+      {% else %}
+        {% assign button_text = 'products.product.sold_out' | t %}
+      {% endif %}
+
+      {% asign is_button_disabled = current_variant.available == false %}
+
+      {% include 'button', with text: button_text, is_submit_button: true, is_disabled: is_button_disabled %}
     </form>
 
 

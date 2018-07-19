@@ -110,7 +110,9 @@
                       placeholder="{{ 'contact.form.weddingMessagePlaceholder' | t }}"></textarea>
         </div>
 
-        <input type="submit" class="contact__form-button" value="{{ 'contact.form.send' | t }}">
+        {% assign button_text = 'contact.form.send' | t %}
+
+        {% include 'button', with class: "contact__form-button", text: button_text, is_submit_button: true %}
 
     {% endform %}
 </div>

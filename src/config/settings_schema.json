@@ -1,165 +1,190 @@
 [
-  {
-    "name": "theme_info",
-    "theme_name": "Starter theme",
-    "theme_version": "1.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://github.com/Shopify/starter-theme",
-    "theme_support_url": "https://github.com/Shopify/starter-theme/issues"
-  },
-  {
-    "name": "Colors",
-    "settings": [
-      {
-        "type": "color",
-        "id": "color_background_one",
-        "label": "Background 1",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "color_background_two",
-        "label": "Background 2",
-        "default": "#708D81"
-      },
-      {
-        "type": "color",
-        "id": "color_background_three",
-        "label": "Background 3",
-        "default": "#e1e8e5"
-      },
-      {
-        "type": "color",
-        "id": "color_background_four",
-        "label": "Background 4",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "color_text_one",
-        "label": "Text 1",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "color_text_two",
-        "label": "Text 2",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "color_text_three",
-        "label": "Text 3",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "color_highlight_one",
-        "label": "Highlight 1",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "color_inventory_one",
-        "label": "Product inventory bubble 1",
-        "default": "#D1CFE2"
-      },
-      {
-        "type": "color",
-        "id": "color_inventory_two",
-        "label": "Product inventory bubble 2",
-        "default": "#D4AFB9"
-      },
-      {
-        "type": "color",
-        "id": "color_separator",
-        "label": "Section separator",
-        "default": "#436043"
-      }
-    ]
-  },
-  {
-    "name": "Typography",
-    "settings": [
-      {
-        "type": "font_picker",
-        "id": "font_heading",
-        "default": "helvetica_n4",
-        "label": "Headings"
-      },
-      {
-        "type": "font_picker",
-        "id": "font_body",
-        "default": "helvetica_n4",
-        "label": "Body text"
-      }
-    ]
-  },
-  {
-    "name": "Social media",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Social sharing image"
-      },
-      {
-        "type": "image_picker",
-        "id": "share_image",
-        "label": "Image",
-        "info": "Shown when sharing a link on social media. [Learn more](https://help.shopify.com/manual/using-themes/troubleshooting/showing-social-media-thumbnail-images/) about image thumbnails."
-      },
-      {
-        "type": "header",
-        "content": "Social media links"
-      },
-      {
-        "type": "text",
-        "id": "social_facebook_link",
-        "label": "Facebook link"
-      },
-      {
-        "type": "text",
-        "id": "social_pinterest_link",
-        "label": "Pinterest link"
-      },
-      {
-        "type": "text",
-        "id": "social_instagram_link",
-        "label": "Instagram link"
-      }
-    ]
-  },
-  {
-    "name": "Cart",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "cart_notes_enable",
-        "label": "Enable cart notes",
-        "default": true
-      }
-    ]
-  },
-  {
-    "name": "Favicon",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "favicon",
-        "label": "Favicon image",
-        "info": "Will be scaled down to 32 x 32px"
-      }
-    ]
-  },
-  {
-    "name": "Instagram API",
-    "settings": [
-      {
-        "type": "text",
-        "id": "instagram_access_token",
-        "label": "API Access Token",
-        "info": "Required to display images from your Instagram account"
-      }
-    ]
-  }
+    {
+        "name": "theme_info",
+        "theme_name": "Starter theme",
+        "theme_version": "1.0.0",
+        "theme_author": "Shopify",
+        "theme_documentation_url": "https://github.com/Shopify/starter-theme",
+        "theme_support_url": "https://github.com/Shopify/starter-theme/issues"
+    },
+    {
+        "name": "Colors",
+        "settings": [
+            {
+                "type": "color",
+                "id": "color_background_one",
+                "label": "Background 1",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_background_two",
+                "label": "Background 2",
+                "default": "#708D81"
+            },
+            {
+                "type": "color",
+                "id": "color_background_three",
+                "label": "Background 3",
+                "default": "#e1e8e5"
+            },
+            {
+                "type": "color",
+                "id": "color_background_four",
+                "label": "Background 4",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_text_one",
+                "label": "Text 1",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_text_two",
+                "label": "Text 2",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_text_three",
+                "label": "Text 3",
+                "default": "#000"
+            },
+            {
+                "type": "color",
+                "id": "color_highlight_one",
+                "label": "Highlight 1",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_inventory_one",
+                "label": "Product inventory bubble 1",
+                "default": "#D1CFE2"
+            },
+            {
+                "type": "color",
+                "id": "color_inventory_two",
+                "label": "Product inventory bubble 2",
+                "default": "#D4AFB9"
+            },
+            {
+                "type": "color",
+                "id": "color_separator",
+                "label": "Section separator",
+                "default": "#436043"
+            },
+            {
+                "type": "header",
+                "content": "Buttons"
+            },
+            {
+                "type": "color",
+                "id": "color_button_background_one",
+                "label": "Button background color"
+            },
+            {
+                "type": "color",
+                "id": "color_button_background_two",
+                "label": "Button background color (hover)"
+            },
+            {
+                "type": "color",
+                "id": "color_button_text_one",
+                "label": "Button text color"
+            },
+            {
+                "type": "color",
+                "id": "color_button_text_two",
+                "label": "Button text color (hover)"
+            }
+        ]
+    },
+    {
+        "name": "Typography",
+        "settings": [
+            {
+                "type": "font_picker",
+                "id": "font_heading",
+                "default": "helvetica_n4",
+                "label": "Headings"
+            },
+            {
+                "type": "font_picker",
+                "id": "font_body",
+                "default": "helvetica_n4",
+                "label": "Body text"
+            }
+        ]
+    },
+    {
+        "name": "Social media",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Social sharing image"
+            },
+            {
+                "type": "image_picker",
+                "id": "share_image",
+                "label": "Image",
+                "info":
+                    "Shown when sharing a link on social media. [Learn more](https://help.shopify.com/manual/using-themes/troubleshooting/showing-social-media-thumbnail-images/) about image thumbnails."
+            },
+            {
+                "type": "header",
+                "content": "Social media links"
+            },
+            {
+                "type": "text",
+                "id": "social_facebook_link",
+                "label": "Facebook link"
+            },
+            {
+                "type": "text",
+                "id": "social_pinterest_link",
+                "label": "Pinterest link"
+            },
+            {
+                "type": "text",
+                "id": "social_instagram_link",
+                "label": "Instagram link"
+            }
+        ]
+    },
+    {
+        "name": "Cart",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "cart_notes_enable",
+                "label": "Enable cart notes",
+                "default": true
+            }
+        ]
+    },
+    {
+        "name": "Favicon",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "favicon",
+                "label": "Favicon image",
+                "info": "Will be scaled down to 32 x 32px"
+            }
+        ]
+    },
+    {
+        "name": "Instagram API",
+        "settings": [
+            {
+                "type": "text",
+                "id": "instagram_access_token",
+                "label": "API Access Token",
+                "info": "Required to display images from your Instagram account"
+            }
+        ]
+    }
 ]
