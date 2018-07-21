@@ -18,4 +18,20 @@
         box-shadow: $color-button-shadow;
         transform: translateY(-1px);
     }
+
+    &:disabled {
+        opacity: 0.6;
+
+        &:focus {
+            color: var(--color-button-text-one);
+        }
+
+        &:hover {
+            background-color: var(--color-button-background-one);
+            color: var(--color-button-text-one);
+            box-shadow: unset;
+            transform: unset;
+            cursor: not-allowed;
+        }
+    }
 }

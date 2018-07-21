@@ -34,8 +34,13 @@
     {% endif %}
   </div>
 
+  {% assign quantity = product.selected_or_first_available_variant.inventory_quantity %}
+
   <div class="product-page__details">
     <h1 class="product-page__title">{{ product.title }}</h1>
+    {% if product.price < product.compare_at_price_max %}
+      <span class="product-page__sale">Sale</span>
+    {% endif %}
 
     <div class="product-page__description">
       {{ product.description }}
