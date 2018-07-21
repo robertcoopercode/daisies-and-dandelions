@@ -15,6 +15,24 @@
     flex-wrap: wrap;
 }
 
+.contact__submission-message {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 20px 40px;
+    font-weight: 400;
+
+    &--success {
+        background-color: $color-highlight-one;
+    }
+
+    &--errors {
+        background-color: $color-highlight-two;
+    }
+}
+
+.contact__errors {
+}
+
 .contact__form-field {
     width: 100%;
     display: flex;

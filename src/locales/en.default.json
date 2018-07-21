@@ -137,7 +137,9 @@
             "meetingTime": "Preferred Meeting Time",
             "referral": "How did you hear about us?",
             "send": "Send",
-            "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+            "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+            "error":
+                "There were errors while trying to submit the form. Please make sure all required fields are completed correctly."
         }
     },
     "customer": {

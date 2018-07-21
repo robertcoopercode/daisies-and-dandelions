@@ -60,6 +60,12 @@
             },
             {
                 "type": "color",
+                "id": "color_highlight_two",
+                "label": "Highlight 2 (errors)",
+                "default": "##ffc1c1"
+            },
+            {
+                "type": "color",
                 "id": "color_inventory_one",
                 "label": "Product inventory bubble 1",
                 "default": "#D1CFE2"
