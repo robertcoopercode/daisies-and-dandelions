@@ -26,28 +26,10 @@
     text-decoration: none;
     color: $color-text-one;
 
+    &:hover,
+    &--active,
     &:focus {
         color: $color-text-one;
-    }
-
-    &::after {
-        transition: all 0.125s ease-in-out;
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        display: block;
-        border-bottom: 3px solid $color-text-one;
-        transform: scaleX(0);
-    }
-
-    &:hover,
-    &:focus,
-    &--active {
-        &::after {
-            transform: scaleX(1);
-        }
     }
 }
 

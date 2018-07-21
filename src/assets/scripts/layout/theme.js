@@ -100,17 +100,17 @@ $(window).scroll(() => {
   $('.hero__chevron').css('opacity', 1 - $(window).scrollTop() / 350);
 });
 
-$('.product-quantity__button--increment').click((event) => {
+$('.quantity-controls__button--increment').click((event) => {
   event.preventDefault();
-  $(event.currentTarget).siblings('.product-quantity__quantity').val((index, value) => {
+  $(event.currentTarget).siblings('.quantity-controls__quantity').val((index, value) => {
     const parsedValue = parseInt(value);
     return parsedValue + 1;
   });
 });
 
-$('.product-quantity__button--decrement').click((event) => {
+$('.quantity-controls__button--decrement').click((event) => {
   event.preventDefault();
-  $(event.currentTarget).siblings('.product-quantity__quantity').val((index, value) => {
+  $(event.currentTarget).siblings('.quantity-controls__quantity').val((index, value) => {
     const parsedValue = parseInt(value);
     if (parsedValue > 1) {
       return parsedValue - 1;

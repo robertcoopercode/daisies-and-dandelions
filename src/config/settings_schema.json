@@ -107,6 +107,12 @@
         "settings": [
             {
                 "type": "font_picker",
+                "id": "font_logo",
+                "default": "helvetica_n4",
+                "label": "Headings"
+            },
+            {
+                "type": "font_picker",
                 "id": "font_heading",
                 "default": "helvetica_n4",
                 "label": "Headings"

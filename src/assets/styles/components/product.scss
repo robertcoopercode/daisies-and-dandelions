@@ -38,6 +38,25 @@ $inventory-diameter: 70px;
     }
 }
 
+.product__tag {
+    transition: transform 0.125s ease-in-out;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    right: 30px;
+    padding: 5px;
+    display: flex;
+    background-color: #000000;
+    color: white;
+    font-weight: 400;
+    z-index: 1;
+    justify-content: center;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 .product__inventory {
     position: absolute;
     top: 30px - ($inventory-diameter / 2);

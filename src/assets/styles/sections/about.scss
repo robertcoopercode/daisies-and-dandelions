@@ -5,7 +5,15 @@
     @include media-query('medium-up') {
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
     }
+}
+
+.about__title {
+    font-family: $font-body;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .about__image-wrapper {
@@ -32,14 +40,6 @@
     @include media-query('medium-up') {
         order: 2;
     }
-}
-
-.about__title {
-    font-family: $font-body;
-    font-weight: 300;
-    letter-spacing: 1px;
-    font-size: 32px;
-    text-transform: none;
 }
 
 .about__description {

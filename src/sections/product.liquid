@@ -37,7 +37,7 @@
   <div class="product-page__details">
     <h1 class="product-page__title">{{ product.title }}</h1>
 
-    <div class="product-page__description  rte">
+    <div class="product-page__description">
       {{ product.description }}
     </div>
 
@@ -92,15 +92,16 @@
         {% endfor %}
       </select>
 
-      {% include 'quantity-controls', with class: "product-page__quantity-wrapper" %}
+      {% include 'quantity-controls', with class: 'product-page__quantity-wrapper' %}
 
       {% if current_variant.available %}
         {% assign button_text = 'products.product.add_to_cart' | t %}
+        {% assign is_button_disabled = false %}
       {% else %}
         {% assign button_text = 'products.product.sold_out' | t %}
+        {% assign is_button_disabled = true %}
       {% endif %}
 
-      {% asign is_button_disabled = current_variant.available == false %}
 
       {% include 'button', with text: button_text, is_submit_button: true, is_disabled: is_button_disabled %}
     </form>

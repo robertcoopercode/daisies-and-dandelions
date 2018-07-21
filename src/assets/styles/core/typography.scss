@@ -1,16 +1,16 @@
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: $font-body;
-  font-weight: $font-body-weight;
-  font-style: $font-body-style;
-  font-size: 1.6rem;
-  
-  *::selection {
-    background: $color-highlight-one;
-  }
+    font-family: $font-body;
+    font-weight: $font-body-weight;
+    font-style: $font-body-style;
+    font-size: 1.6rem;
+
+    *::selection {
+        background: $color-highlight-one;
+    }
 }
 
 h1,
@@ -19,22 +19,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-heading;
-  margin: 0;
+    font-family: $font-heading;
+    margin: 0;
 }
 
 h1 {
-  font-size: 36px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 h2 {
-  text-transform: uppercase;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 body,
@@ -42,10 +42,10 @@ input,
 textarea,
 button,
 select {
-  -webkit-font-smoothing: antialiased;
-  text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
 }
 
 a:focus {
-  color: inherit;
+    color: inherit;
 }

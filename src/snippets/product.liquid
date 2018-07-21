@@ -2,11 +2,13 @@
 {% assign inventory_management = product.selected_or_first_available_variant.inventory_management %}
 
 <a href="{{ product.url | within: collection }}" class="product">
-    {% if quantity < 10 and inventory_management == "shopify" %}
+    {% if quantity < 10 and quantity > 0 and inventory_management == "shopify" %}
       <span class="product__inventory">
         <span class="product__inventory-number">{{ quantity }}</span>
         <span class="product__inventory-text">left</span>
       </span>
+    {% elsif quantity == 0 and inventory_management == "shopify" %}
+        <span class="product__tag">SOLD OUT</span>
     {% endif %}
     {% if product.featured_image != blank %}
         <div class="product__image">

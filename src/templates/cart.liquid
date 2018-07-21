@@ -8,7 +8,7 @@
 
     {% include 'button', with class: "cart-update", text: update_button_text, is_submit_button: true, name: 'update' %}
 
-    <table class="cart-table  responsive-table">
+    <table class="cart-table">
       <tbody>
 
         {% for item in cart.items %}
@@ -18,10 +18,10 @@
         Cart Item Template
         =====================
         The data-label attributes on <td> elements are mobile-friendly
-        helpers used for responsive-table labels
+        helpers used for labels
         {% endcomment %}
 
-          <tr class="cart-table__row  responsive-table-row">
+          <tr class="cart-table__row">
 
             <td class="cart-table__column  cart-table__column--image" data-label="{{ 'customer.order.product' | t }}">
 

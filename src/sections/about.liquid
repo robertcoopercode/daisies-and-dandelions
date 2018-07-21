@@ -1,11 +1,11 @@
 <div class="about  container">
+    <h1 class="about__title">{{ section.settings.title }}</h1>
     {% include 'responsive-image' with
         image: section.settings.image,
         max_width: 480,
         max_height: 480,
         wrapper_class: 'about__image-wrapper' %}
     <div class="about__second-container">
-        <h1 class="about__title">{{ section.settings.title }}</h1>
         <div class="about__description  rte">
             {{ section.settings.text }}
         </div>
