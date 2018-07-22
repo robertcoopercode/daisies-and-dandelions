@@ -1,0 +1,25 @@
+<div class="instagram container">
+  <h2 class="instagram__title">{{ section.settings.title }}</h2>
+  <div class="instagram__images">
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "instagram",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Instagram"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

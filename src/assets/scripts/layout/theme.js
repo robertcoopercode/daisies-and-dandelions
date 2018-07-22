@@ -20,6 +20,7 @@ if (document.querySelector('.glide')) {
   new Glide('.glide', {
     type: 'carousel',
     perView: 3,
+    peek: {before: 50, after: 50},
     breakpoints: {
       800: {
         perView: 2,
@@ -75,6 +76,39 @@ $(document).ready(() => {
   // if (localStorage.getItem('hideAnnouncement')) {
   //     $('.announcement').css('display', 'none');
   // }
+
+  // Instagram fetching
+  // TODO: figure out how to grab the access token from the customizer
+  fetch('https://api.instagram.com/v1/users/self/media/recent/?access_token=2221755979.4247df9.1794f985c3014fc09ac415a8bc607128')
+    .then((response) => response.json())
+    .then((response) => {
+      response.data.filter((post) => post.type === ('image' || 'carousel')).some((post, index) => {
+        $('.instagram__images').append(`<div class="instagram__image-wrapper"><img class="instagram__image" src=${post.images.standard_resolution.url} /></div>`);
+        return (index >= 5);
+      });
+
+      $.each($('.instagram__image'), (index, image) => {
+        if ($(image).width() > $(image).height()) {
+          const postionFromLeft = (($(image).width() - $(image).height()) / 2) * -1;
+          $(image).css('left', postionFromLeft);
+        }
+      });
+
+      $(window).resize(() => {
+        repositionInstagramImages();
+      });
+    })
+    .catch((error) => console.log(error));
+
+  function repositionInstagramImages() {
+    $.each($('.instagram__image'), (index, image) => {
+      if ($(image).width() > $(image).height()) {
+        const postionFromLeft = (($(image).width() - $(image).height()) / 2) * -1;
+        $(image).css('left', postionFromLeft);
+      }
+    });
+  }
+
 });
 
 $('.announcement__close').click(() => {
