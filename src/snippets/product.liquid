@@ -2,15 +2,21 @@
 {% assign inventory_management = product.selected_or_first_available_variant.inventory_management %}
 
 <a href="{{ product.url | within: collection }}" class="product">
-    {% if quantity < 10 and quantity > 0 and inventory_management == "shopify" %}
-      <span class="product__inventory">
-        <span class="product__inventory-number">{{ quantity }}</span>
-        <span class="product__inventory-text">left</span>
+    {% if quantity < 10 and inventory_management == "shopify" %}
+      <span class="product__inventory{% if quantity == 0 and inventory_management == "shopify" %}  product__inventory--sold-out{% endif %}">
+        {% if quantity == 0 and inventory_management == "shopify" %}
+            <span class="product__sold-out">SOLD OUT</span>
+        {% else %}
+            <span class="product__inventory-number">{{ quantity }}</span>
+            <span class="product__inventory-text">left</span>
+        {% endif %}
       </span>
-    {% elsif quantity == 0 and inventory_management == "shopify" %}
-        <span class="product__tag">SOLD OUT</span>
     {% endif %}
-    {% if product.featured_image != blank %}
+    
+    <div class="product__image-wrapper">
+        {% if product.compare_at_price > product.price %}
+            <span class="product__sale-tag">SALE</span>
+        {% endif %}
         <div class="product__image">
             {% include 'responsive-image' with
                 image: product.featured_image,
@@ -18,26 +24,23 @@
                 max_height: 480
             %}
         </div>
-    {% endif %}
+    </div>
+
     <div class="product__bottom-container">
         <p class="product__title">{{ product.title | escape }}</p>
         <span class="product__price">
-        {% if product.compare_at_price > product.price %}
-            {% if product.price_varies %}
-                {%- assign sale_price = product.price | money -%}
-                {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-            {% else %}
-                {{ 'products.product.on_sale' | t }}
-                {{ product.price | money }}
-            {% endif %}
-        {% else %}
             {% if product.price_varies %}
                 {%- assign price = product.price | money -%}
                 {{ 'products.product.from_text_html' | t: price: price }}
             {% else %}
                 {{ product.price | money }}
+                {% if product.compare_at_price > product.price %}
+                    <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+                    <s class="product-page__price-comparison" data-compare-price>
+                        {{ product.compare_at_price | money }}
+                    </s>
+                {% endif %}
             {% endif %}
-        {% endif %}
       </span>
     </div>
 </a>
