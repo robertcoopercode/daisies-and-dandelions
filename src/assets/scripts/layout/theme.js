@@ -119,3 +119,74 @@ $('.quantity-controls__button--decrement').click((event) => {
     }
   });
 });
+
+/* eslint-disable */
+
+$('.contact__form-button').click((event) => {
+  event.preventDefault();
+
+  let isValid = true;
+
+  $.each($('.contact__form-field  [required]') , (index, input) => {
+    $(input).parent('.contact__form-field').removeClass('contact__form-field--error')
+    console.log($(input).attr('pattern'), $(input).val());
+    let fieldValue = $(input).val();
+    if ($(input).attr('pattern')) {
+      let regex = RegExp($(input).attr('pattern'));
+      let validField = regex.test(fieldValue);
+      console.log(validField)
+      if (!validField) {
+        isValid = false;
+        $(input).parent('.contact__form-field').addClass('contact__form-field--error');
+      }
+    }
+    if (fieldValue === '') {
+      isValid = false;
+      $(input).parent('.contact__form-field').addClass('contact__form-field--error');
+    }
+  });
+
+  // Form validation that checks that at least one required checkbox is ticked
+  if ($('.contact__options--meetingTimes').length) {
+    $('.contact__options--meetingTimes').parent('.contact__form-field').removeClass('contact__form-field--error')
+
+    let atLeastOneCheckboxChecked = false;
+    
+    $.each($('.contact__options--meetingTimes input[type="checkbox"]'), (index, checkbox) => {
+      if ($(checkbox).is(':checked')) {
+        atLeastOneCheckboxChecked = true;
+        return atLeastOneCheckboxChecked;
+      }
+    });
+
+    if (!atLeastOneCheckboxChecked) {
+      isValid = false;
+      $('.contact__options--meetingTimes').parent('.contact__form-field').addClass('contact__form-field--error')
+    }
+  }
+
+  // Form validation that checks that at least one required checkbox is ticked
+  if ($('.contact__options--referrals').length) {
+    $('.contact__options--referrals').parent('.contact__form-field').removeClass('contact__form-field--error')
+
+    let atLeastOneCheckboxChecked = false;
+    
+    $.each($('.contact__options--referrals input[type="checkbox"]'), (index, checkbox) => {
+      if ($(checkbox).is(':checked')) {
+        atLeastOneCheckboxChecked = true;
+        return atLeastOneCheckboxChecked;
+      }
+    });
+
+    if (!atLeastOneCheckboxChecked) {
+      isValid = false;
+      $('.contact__options--referrals').parent('.contact__form-field').addClass('contact__form-field--error')
+    }
+  }
+
+  if (isValid) {
+    document.querySelector('form').submit();
+  }
+});
+
+/* eslint-enable */

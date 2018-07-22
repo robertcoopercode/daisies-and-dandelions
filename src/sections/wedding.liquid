@@ -25,12 +25,12 @@
                     placeholder="{{ 'contact.form.namePlaceholder' | t }}"
                     required
                    >
-            
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
         <div class="contact__form-field  contact__form-field--half">
             <label class="contact__form-label" for="ContactFormEmail">{{ 'contact.form.email' | t }}*</label>
             <input class="contact__form-input"
-                    type="email"
+                    pattern="^.+\@.+\..+$"
                     name="contact[email]"
                     id="ContactFormEmail"
                     placeholder="{{ 'contact.form.emailPlaceholder' | t }}"
@@ -39,7 +39,7 @@
                     autocapitalize="off"
                     required
                 >
-            
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
         
         <div class="contact__form-field  contact__form-field--half">
@@ -49,10 +49,10 @@
                    name="contact[phone]"
                    id="ContactFormPhone"
                    placeholder="{{ 'contact.form.phonePlaceholder' | t }}"
-                   pattern="[0-9\-]*"
+                   pattern="^[0-9\-]*$"
                    required
                 >
-            
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
 
         <div class="contact__form-field  contact__form-field--half">
@@ -64,48 +64,50 @@
                    placeholder="{{ 'contact.form.datePlaceholder' | t }}"
                    required
                 >
-
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
         
         <div class="contact__form-field  contact__form-field--half">
-            <fieldset class="contact__options">
-                <legend class="contact__legend">{{ 'contact.form.meetingTime' | t }}</legend>
-                <input type="checkbox" id="meetingTime1" name="meetingTime">
+            <fieldset class="contact__options  contact__options--meetingTimes">
+                <legend class="contact__legend">{{ 'contact.form.meetingTime' | t }}*</legend>
+                <input type="checkbox" id="meetingTime1" name="contact[meetingTime1]" value="Weekday Mornings (8am - 11am)">
                 <label for="meetingTime1">Weekday Mornings (8am - 11am)</label>
-                <input type="checkbox" id="meetingTime2" name="meetingTime">
+                <input type="checkbox" id="meetingTime2" name="contact[meetingTime2]" value="Weekday Afternoons (12pm - 4pm)">
                 <label for="meetingTime2">Weekday Afternoons (12pm - 4pm)</label>
-                <input type="checkbox" id="meetingTime3" name="meetingTime">
+                <input type="checkbox" id="meetingTime3" name="contact[meetingTime3]" value="Weekday Evenings (5pm - 8pm)">
                 <label for="meetingTime3">Weekday Evenings (5pm - 8pm)</label>
-                <input type="checkbox" id="meetingTime4" name="meetingTime">
+                <input type="checkbox" id="meetingTime4" name="contact[meetingTime4]" value="Weekend Mornings (8am - 11am)">
                 <label for="meetingTime4">Weekend Mornings (8am - 11am)</label>
-                <input type="checkbox" id="meetingTime5" name="meetingTime">
+                <input type="checkbox" id="meetingTime5" name="contact[meetingTime5]" value="Weekend Afternoons (12pm - 4pm)">
                 <label for="meetingTime5">Weekend Afternoons (12pm - 4pm)</label>
-                <input type="checkbox" id="meetingTime6" name="meetingTime">
+                <input type="checkbox" id="meetingTime6" name="contact[meetingTime6]" value="Weekend Evenings (5pm - 8pm)">
                 <label for="meetingTime6">Weekend Evenings (5pm - 8pm)</label>
             </fieldset>
+            <p class="contact__form-field-error">{{ 'contact.form.errorMeeting' | t }}</p>
         </div>
         
         <div class="contact__form-field  contact__form-field--half">
-            <fieldset class="contact__options">
-                <legend class="contact__legend">{{ 'contact.form.referral' | t }}</legend>
-                <input type="checkbox" id="referral1" name="referral">
+            <fieldset class="contact__options  contact__options--referrals">
+                <legend class="contact__legend">{{ 'contact.form.referral' | t }}*</legend>
+                <input type="checkbox" id="referral1" name="contact[referral1]" value="Friend">
                 <label for="referral1">Friend</label>
-                <input type="checkbox" id="referral2" name="referral">
+                <input type="checkbox" id="referral2" name="contact[referral2]" value="Word of Mouth">
                 <label for="referral2">Word of Mouth</label>
-                <input type="checkbox" id="referral3" name="referral">
+                <input type="checkbox" id="referral3" name="contact[referral3]" value="Social Media (Facebook or Instagram)">
                 <label for="referral3">Social Media (Facebook or Instagram)</label>
-                <input type="checkbox" id="referral4" name="referral">
+                <input type="checkbox" id="referral4" name="contact[referral4]" value="Google Search">
                 <label for="referral4">Google Search</label>
-                <input type="checkbox" id="referral5" name="referral">
+                <input type="checkbox" id="referral5" name="contact[referral5]" value="Other">
                 <label for="referral5">Other</label>
             </fieldset>
+            <p class="contact__form-field-error">{{ 'contact.form.errorReferral' | t }}</p>
         </div>
 
         <div class="contact__form-field">
             <label class="contact__form-label" for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
             <textarea class="contact__form-textarea" 
                     rows="10"
-                      name="contact[body]"
+                      name="contact[message]"
                       id="ContactFormMessage"
                       placeholder="{{ 'contact.form.weddingMessagePlaceholder' | t }}"></textarea>
         </div>

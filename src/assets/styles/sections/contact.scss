@@ -30,9 +30,6 @@
     }
 }
 
-.contact__errors {
-}
-
 .contact__form-field {
     width: 100%;
     display: flex;
@@ -43,6 +40,12 @@
     @include media-query('medium-up') {
         &--half {
             width: 50%;
+        }
+    }
+
+    &--error {
+        .contact__form-field-error {
+            display: flex;
         }
     }
 }
@@ -149,4 +152,15 @@ input[type='checkbox']:checked + label:before {
     border-left-color: transparent;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.contact__form-field-error {
+    display: none;
+    align-self: flex-start;
+    background-color: $color-highlight-two;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    line-height: 24px;
+    padding: 5px 10px;
+    margin-bottom: 0;
 }

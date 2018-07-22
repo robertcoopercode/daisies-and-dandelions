@@ -23,12 +23,12 @@
                     placeholder="{{ 'contact.form.namePlaceholder' | t }}"
                     required
                 >
-            
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
         <div class="contact__form-field  contact__form-field--half">
             <label class="contact__form-label" for="ContactFormEmail">{{ 'contact.form.email' | t }}*</label>
             <input class="contact__form-input"
-                    type="email"
+                    pattern="^.+\@.+\..+$"
                     name="contact[email]"
                     id="ContactFormEmail"
                     placeholder="{{ 'contact.form.emailPlaceholder' | t }}"
@@ -37,7 +37,7 @@
                     autocapitalize="off"
                     required
                 >
-            
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
         
         <div class="contact__form-field">
@@ -54,11 +54,12 @@
             <label class="contact__form-label" for="ContactFormMessage">{{ 'contact.form.message' | t }}*</label>
             <textarea class="contact__form-textarea" 
                         rows="10"
-                        name="contact[body]"
+                        name="contact[message]"
                         id="ContactFormMessage"
                         placeholder="{{ 'contact.form.messagePlaceholder' | t }}"
                         required
                       ></textarea>
+            <p class="contact__form-field-error">{{ 'contact.form.errorGeneral' | t }}</p>
         </div>
 
         {% assign button_text = 'contact.form.send' | t %}

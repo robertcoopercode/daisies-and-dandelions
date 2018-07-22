@@ -76,6 +76,7 @@ sections.register('product', {
         this.updateImages.bind(this),
       );
     }
+
   },
 
   setActiveThumbnail(imageId) {

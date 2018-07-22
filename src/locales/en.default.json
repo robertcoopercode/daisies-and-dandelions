@@ -139,7 +139,10 @@
             "send": "Send",
             "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
             "error":
-                "There were errors while trying to submit the form. Please make sure all required fields are completed correctly."
+                "There were errors while trying to submit the form. Please make sure all required fields are completed correctly.",
+            "errorGeneral": "This fields is invalid",
+            "errorMeeting": "Please select at least one meeting time",
+            "errorReferral": "Please select at least one referral source"
         }
     },
     "customer": {
