@@ -23,7 +23,10 @@
 
 .product-page__details {
     flex-grow: 1;
-    padding-left: 30px;
+
+    @include media-query('medium-up') {
+        padding-left: 30px;
+    }
 }
 
 .product-page__title {

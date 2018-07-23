@@ -35,7 +35,7 @@
 
 .footer__social-list {
     list-style: none;
-    margin: 20px 0 30px;
+    margin: 20px 0 50px;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -88,13 +88,14 @@
 }
 
 .footer__logo {
-    height: 200px;
+    width: 300px;
+    height: auto;
 }
 
 .footer__attribution {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
     font-style: italic;
     font-weight: 300;
 }

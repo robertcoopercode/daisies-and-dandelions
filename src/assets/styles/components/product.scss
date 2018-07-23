@@ -55,6 +55,7 @@ $inventory-diameter: 70px;
 
 .product__inventory {
     position: absolute;
+    padding: 5px;
     top: 30px - ($inventory-diameter / 2);
     right: 30px - ($inventory-diameter / 2);
     background-color: var(--color-inventory-one);

@@ -62,7 +62,7 @@
                 "type": "color",
                 "id": "color_highlight_two",
                 "label": "Highlight 2 (errors)",
-                "default": "##ffc1c1"
+                "default": "#ffc1c1"
             },
             {
                 "type": "color",
@@ -109,7 +109,7 @@
                 "type": "font_picker",
                 "id": "font_logo",
                 "default": "helvetica_n4",
-                "label": "Headings"
+                "label": "Logo"
             },
             {
                 "type": "font_picker",

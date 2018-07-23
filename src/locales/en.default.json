@@ -280,7 +280,7 @@
         },
         "footer": {
             "social_platform": "{{ name }} on {{ platform }}",
-            "attribution": "Made with ❤️ by the coolest brother ever"
+            "attribution": "Shopify theme created for the hell of it ¯\\_(ツ)_/¯"
         }
     },
     "products": {
