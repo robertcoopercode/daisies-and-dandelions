@@ -1,4 +1,4 @@
-# Primrose & Willow
+# Daisies and Dandelions
 
 This Shopify theme is build using the [Slate v1](https://github.com/Shopify/slate) and Shopify's developer starter theme.
 
